@@ -8,3 +8,9 @@ and located at http://box2d-js.sourceforge.net/index.html
 where was some more information.
 
 I found some features of this port is inconvenient and try to correct it.
+
+List of changes:
+----------------
+
+  * Add builder for concatenate files of lib in one because them total count is 64.
+    Now you add lib just place script tag with box2d.min.js
