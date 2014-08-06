@@ -1,6 +1,5 @@
 
 world = null
-ctx = null
 
 initBox2d = ->
     aabb = new b2AABB
@@ -10,7 +9,12 @@ initBox2d = ->
 
 initDraw = ->
     canvas = document.getElementById 'canvas'
-    window.ctx = canvas.getContext('2d')
+    ctx = canvas.getContext('2d')
+    window.world.SetDebugDraw({
+        ctx : ctx
+        width : 640
+        height : 480
+    })
 
 addBody = (params) ->
     params ||= {}
@@ -29,7 +33,7 @@ addBody = (params) ->
     else if points
         shapeDef = new b2PolyDef
         shapeDef.vertexCount = points.length
-        for p in points
+        for p, i in points
             shapeDef.vertices[i].Set(p[0], p[1])
         bodyDef.AddShape(shapeDef)
     else
@@ -51,14 +55,73 @@ addBody = (params) ->
         additional : params.additional || {}
 
 ground = ->
-    console.log 'ground'
+    # floor
+    addBody({
+        name : 'floor'
+        x : 320
+        y : 475
+        width : 640
+        height : 10
+        friction : .1
+        density : 0
+    })
+    # left wall
+    addBody({
+        name : 'left wall'
+        x : 5
+        y : 240
+        width : 10
+        height : 480
+        friction : .1
+        density : 0
+    })
+    # right wall
+    addBody({
+        name : 'right wall'
+        x : 635
+        y : 240
+        width : 10
+        height : 480
+        friction : .1
+        density : 0
+    })
 
 bodies = ->
-    console.log 'bodies'
+    # square
+    addBody({
+        name : 'square'
+        x : 310
+        y : 30,
+        width : 50
+        height : 50
+        friction : .2
+        #restitution : ,
+        density : 1
+    })
+    # circle
+    addBody({
+        name : 'circle'
+        x : 320
+        y : 100
+        radius: 15
+        friction : 0.2
+        restitution : 0.2
+        density : 1
+    })
+    # static triangle
+    addBody({
+        name : 'static triangle'
+        x : 320
+        y : 300
+        points: [[0, 0], [100, 100], [-100, 125]]
+        friction : .1
+        #restitution : ,
+        density : 0
+    })
 
 animate = ->
     window.world.Step(1 / 60, 4)
-    window.world.DebugDraw(window.ctx)
+    window.world.DebugDraw()
     requestAnimationFrame animate
 
 window.onload = ->
