@@ -33,11 +33,9 @@ b2World.prototype._drawJoint = function (joint) {
             this.ctx.moveTo(p1.x, p1.y);
             this.ctx.lineTo(p2.x, p2.y);
             break;
-
         case b2Joint.e_pulleyJoint:
             // TODO
             break;
-
         default:
             if (b1 == world.m_groundBody) {
                 this.ctx.moveTo(p1.x, p1.y);

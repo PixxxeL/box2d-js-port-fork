@@ -15,6 +15,6 @@ List of changes:
   * Add builder for concatenate files of lib in one because them total count is 64.
     Now you add lib just place script tag with `box2d.min.js` from `src/origin` dir
     if you want original version or from `src/fork` if you want new version.
-  * Add DebugDraw method of b2World class. This method call every frame
+  * Add `DebugDraw` method of b2World class. This method call every frame
     for draw shapes and joints on canvas element. For install it
     set `SetDebugDraw` where pass 2d-context, width and height of canvas-2d.
