@@ -1,0 +1,8 @@
+#canvas-container,
+#canvas {
+    width: 640px;
+    height: 480px;
+}
+#canvas {
+    background-color: #333;
+}

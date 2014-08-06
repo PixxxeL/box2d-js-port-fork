@@ -5,11 +5,12 @@ import os
 
 VERBOSE_YUI = False
 YUI_APP_PATH = 'd:\\www\\yuicompressor-2.4.8.jar'
+SOURCE = ('origin', 'fork',)[1]
 MIN_SUFF = 'min'
 ORIGIN_HTML_PATH = 'data\\list-of-files.html'
-ORIGIN_PRE_URL_REPLACES = ['js/', 'src/origin/']
-RESULT_PATH = 'src\\box2d.js'
-RESULT_MIN_PATH = 'src\\box2d.min.js'
+ORIGIN_PRE_URL_REPLACES = ['js/', 'src/%s/' % SOURCE]
+RESULT_PATH = 'src\\%s\\box2d.js' % SOURCE
+RESULT_MIN_PATH = 'src\\%s\\box2d.min.js' % SOURCE
 
 def _yui_compress(src, dst):
     cmd = [

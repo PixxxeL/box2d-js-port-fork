@@ -13,4 +13,5 @@ List of changes:
 ----------------
 
   * Add builder for concatenate files of lib in one because them total count is 64.
-    Now you add lib just place script tag with box2d.min.js
+    Now you add lib just place script tag with box2d.min.js from src/origin dir
+    if you want original version or from src/fork if you want new version.
