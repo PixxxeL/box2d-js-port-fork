@@ -61,7 +61,10 @@ def main():
     if os.path.isfile(RESULT_MIN_PATH):
         os.remove(RESULT_MIN_PATH)
     data = _read(ORIGIN_HTML_PATH)
-    for item in src_re.findall(data):
+    items = src_re.findall(data)
+    if SOURCE == 'fork':
+        items.append('js/box2d/extensions/b2World.js')
+    for item in items:
         if item.startswith('js/'):
             _proc_src(item)
 
