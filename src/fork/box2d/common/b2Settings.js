@@ -17,10 +17,7 @@
 */
 
 
-
-
-
-var b2Settings = Class.create();
+var b2Settings = function () {};
 b2Settings.prototype = {
 
 
@@ -42,8 +39,8 @@ b2Settings.prototype = {
 	// Sleep
 
 	// assert
+};
 
-	initialize: function() {}}
 b2Settings.USHRT_MAX = 0x0000ffff;
 b2Settings.b2_pi = Math.PI;
 b2Settings.b2_massUnitsPerKilogram = 1.0;
@@ -63,10 +60,19 @@ b2Settings.b2_contactBaumgarte = 0.2;
 b2Settings.b2_timeToSleep = 0.5 * b2Settings.b2_timeUnitsPerSecond;
 b2Settings.b2_linearSleepTolerance = 0.01 * b2Settings.b2_lengthUnitsPerMeter / b2Settings.b2_timeUnitsPerSecond;
 b2Settings.b2_angularSleepTolerance = 2.0 / 180.0 / b2Settings.b2_timeUnitsPerSecond;
-b2Settings.b2Assert = function(a)
-	{
-		if (!a){
-			var nullVec;
-			nullVec.x++;
-		}
-	};
+
+b2Settings.b2Assert = function (a) {
+	if (!a) {
+		var nullVec;
+		nullVec.x++;
+	}
+};
+
+/*
+ * Solution from prototype framework
+ */
+Object.extend = function (destination, source) {
+    for (var property in source)
+        destination[property] = source[property];
+    return destination;
+};

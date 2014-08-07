@@ -22,7 +22,7 @@
 
 
 
-var b2CollisionFilter = Class.create();
+var b2CollisionFilter = function () {};
 b2CollisionFilter.prototype = 
 {
 
@@ -35,8 +35,7 @@ b2CollisionFilter.prototype =
 
 		var collide = (shape1.m_maskBits & shape2.m_categoryBits) != 0 && (shape1.m_categoryBits & shape2.m_maskBits) != 0;
 		return collide;
-	},
+	}
+};
 
-
-	initialize: function() {}};
 b2CollisionFilter.b2_defaultFilter = new b2CollisionFilter;

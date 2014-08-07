@@ -1,57 +1,56 @@
 ﻿/*
-* Copyright (c) 2006-2007 Erin Catto http:
-*
-* This software is provided 'as-is', without any express or implied
-* warranty.  In no event will the authors be held liable for any damages
-* arising from the use of this software.
-* Permission is granted to anyone to use this software for any purpose,
-* including commercial applications, and to alter it and redistribute it
-* freely, subject to the following restrictions:
-* 1. The origin of this software must not be misrepresented; you must not
-* claim that you wrote the original software. If you use this software
-* in a product, an acknowledgment in the product documentation would be
-* appreciated but is not required.
-* 2. Altered source versions must be plainly marked, and must not be
-* misrepresented the original software.
-* 3. This notice may not be removed or altered from any source distribution.
-*/
+ * Copyright (c) 2006-2007 Erin Catto http:
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty.  In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ * 1. The origin of this software must not be misrepresented; you must not
+ * claim that you wrote the original software. If you use this software
+ * in a product, an acknowledgment in the product documentation would be
+ * appreciated but is not required.
+ * 2. Altered source versions must be plainly marked, and must not be
+ * misrepresented the original software.
+ * 3. This notice may not be removed or altered from any source distribution.
+ *
+ * Removing prototype dependency by piksel@mail.ru
+ */
 
 
 
 
-var b2World = Class.create();
+var b2World = function (worldAABB, gravity, doSleep) {
+	this.step = new b2TimeStep();
+	this.m_contactManager = new b2ContactManager();
+
+	this.m_listener = null;
+	this.m_filter = b2CollisionFilter.b2_defaultFilter;
+
+	this.m_bodyList = null;
+	this.m_contactList = null;
+	this.m_jointList = null;
+
+	this.m_bodyCount = 0;
+	this.m_contactCount = 0;
+	this.m_jointCount = 0;
+
+	this.m_bodyDestroyList = null;
+
+	this.m_allowSleep = doSleep;
+
+	this.m_gravity = gravity;
+
+	this.m_contactManager.m_world = this;
+	this.m_broadPhase = new b2BroadPhase(worldAABB, this.m_contactManager);
+
+	var bd = new b2BodyDef();
+	this.m_groundBody = this.CreateBody(bd);
+};
+
 b2World.prototype = 
 {
-	initialize: function(worldAABB, gravity, doSleep){
-		// initialize instance variables for references
-		this.step = new b2TimeStep();
-		this.m_contactManager = new b2ContactManager();
-		//
-
-
-		this.m_listener = null;
-		this.m_filter = b2CollisionFilter.b2_defaultFilter;
-
-		this.m_bodyList = null;
-		this.m_contactList = null;
-		this.m_jointList = null;
-
-		this.m_bodyCount = 0;
-		this.m_contactCount = 0;
-		this.m_jointCount = 0;
-
-		this.m_bodyDestroyList = null;
-
-		this.m_allowSleep = doSleep;
-
-		this.m_gravity = gravity;
-
-		this.m_contactManager.m_world = this;
-		this.m_broadPhase = new b2BroadPhase(worldAABB, this.m_contactManager);
-
-		var bd = new b2BodyDef();
-		this.m_groundBody = this.CreateBody(bd);
-	},
 	//~b2World(){
 	//	this.DestroyBody(this.m_groundBody);
 	//	delete this.m_broadPhase;
@@ -490,6 +489,107 @@ b2World.prototype =
 		return this.m_contactList;
 	},
 
+	DebugDraw : function () {
+	    var item, shape;
+	    this.ctx.clearRect(0, 0, this.ctx.width, this.ctx.height);
+	    for (item = world.m_jointList; item; item = item.m_next) {
+	        this._drawJoint(item);
+	    }
+	    for (item = world.m_bodyList; item; item = item.m_next) {
+	        for (shape = item.GetShapeList(); shape != null; shape = shape.GetNext()) {
+	            this._drawShape(shape);
+	        }
+	    }
+	},
+	SetDebugDraw : function (params) {
+	    params = params || {};
+	    this.ctx = params.ctx; 
+	    this.ctx.width = params.width; 
+	    this.ctx.height = params.height;
+	},
+	_drawJoint : function (joint) {
+	    var b1 = joint.m_body1,
+	        b2 = joint.m_body2,
+	        x1 = b1.m_position,
+	        x2 = b2.m_position,
+	        p1 = joint.GetAnchor1(),
+	        p2 = joint.GetAnchor2();
+	    this.ctx.strokeStyle = '#ffffff';
+	    this.ctx.beginPath();
+	    switch (joint.m_type) {
+	        case b2Joint.e_distanceJoint:
+	            this.ctx.moveTo(p1.x, p1.y);
+	            this.ctx.lineTo(p2.x, p2.y);
+	            break;
+	        case b2Joint.e_pulleyJoint:
+	            // TODO
+	            break;
+	        default:
+	            if (b1 == world.m_groundBody) {
+	                this.ctx.moveTo(p1.x, p1.y);
+	                this.ctx.lineTo(x2.x, x2.y);
+	            }
+	            else if (b2 == world.m_groundBody) {
+	                this.ctx.moveTo(p1.x, p1.y);
+	                this.ctx.lineTo(x1.x, x1.y);
+	            }
+	            else {
+	                this.ctx.moveTo(x1.x, x1.y);
+	                this.ctx.lineTo(p1.x, p1.y);
+	                this.ctx.lineTo(x2.x, x2.y);
+	                this.ctx.lineTo(p2.x, p2.y);
+	            }
+	            break;
+	    }
+	    this.ctx.stroke();
+	},
+	_drawShape : function (shape) {
+	    var i, v, tV, pos, r, segments, theta, dtheta, d, ax;
+	    this.ctx.strokeStyle = 'rgba(255,255,255,.75)';
+	    this.ctx.fillStyle = 'rgba(255,255,255,.33)';
+	    this.ctx.beginPath();
+	    switch (shape.m_type) {
+	        case b2Shape.e_circleShape:
+	            pos = shape.m_position;
+	            r = shape.m_radius;
+	            segments = 16.0;
+	            theta = 0.0;
+	            dtheta = 2.0 * Math.PI / segments;
+	            // draw circle
+	            this.ctx.moveTo(pos.x + r, pos.y);
+	            for (i = 0; i < segments; i++) {
+	                d = new b2Vec2(r * Math.cos(theta), r * Math.sin(theta));
+	                v = b2Math.AddVV(pos, d);
+	                this.ctx.lineTo(v.x, v.y);
+	                theta += dtheta;
+	            }
+	            this.ctx.lineTo(pos.x + r, pos.y);
+	            // draw radius
+	            this.ctx.moveTo(pos.x, pos.y);
+	            ax = shape.m_R.col1;
+	            pos = new b2Vec2(pos.x + r * ax.x, pos.y + r * ax.y);
+	            this.ctx.lineTo(pos.x, pos.y);
+	            break;
+	        case b2Shape.e_polyShape:
+	            tV = b2Math.AddVV(
+	                shape.m_position,
+	                b2Math.b2MulMV(shape.m_R, shape.m_vertices[0])
+	            );
+	            this.ctx.moveTo(tV.x, tV.y);
+	            for (i = 0; i < shape.m_vertexCount; i++) {
+	                v = b2Math.AddVV(
+	                    shape.m_position,
+	                    b2Math.b2MulMV(shape.m_R, shape.m_vertices[i])
+	                );
+	                this.ctx.lineTo(v.x, v.y);
+	            }
+	            this.ctx.lineTo(tV.x, tV.y);
+	            break;
+	    }
+	    this.ctx.stroke();
+	    this.ctx.fill();
+	},
+
 	//--------------- Internals Below -------------------
 
 	m_blockAllocator: null,
@@ -517,6 +617,9 @@ b2World.prototype =
 	m_listener: null,
 	m_filter: null,
 
-	m_positionIterationCount: 0};
+	m_positionIterationCount: 0
+
+};
+
 b2World.s_enablePositionCorrection = 1;
 b2World.s_enableWarmStarting = 1;

@@ -22,11 +22,12 @@
 
 // b2Vec2 has no constructor so that it
 // can be placed in a union.
-var b2Vec2 = Class.create();
+var b2Vec2 = function (x_, y_) {
+	this.x=x_;
+	this.y=y_;
+};
 b2Vec2.prototype = 
 {
-	initialize: function(x_, y_) {this.x=x_; this.y=y_;},
-
 	SetZero: function() { this.x = 0.0; this.y = 0.0; },
 	Set: function(x_, y_) {this.x=x_; this.y=y_;},
 	SetV: function(v) {this.x=v.x; this.y=v.y;},
@@ -124,7 +125,9 @@ b2Vec2.prototype =
 	},
 
 	x: null,
-	y: null};
+	y: null
+};
+
 b2Vec2.Make = function(x_, y_)
 	{
 		return new b2Vec2(x_, y_);

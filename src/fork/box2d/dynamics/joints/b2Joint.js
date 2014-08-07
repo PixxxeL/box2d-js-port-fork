@@ -20,7 +20,22 @@
 
 
 
-var b2Joint = Class.create();
+var b2Joint = function (def) {
+	// initialize instance variables for references
+	this.m_node1 = new b2JointNode();
+	this.m_node2 = new b2JointNode();
+	//
+
+	this.m_type = def.type;
+	this.m_prev = null;
+	this.m_next = null;
+	this.m_body1 = def.body1;
+	this.m_body2 = def.body2;
+	this.m_collideConnected = def.collideConnected;
+	this.m_islandFlag = false;
+	this.m_userData = def.userData;
+};
+
 b2Joint.prototype = 
 {
 	GetType: function(){
@@ -53,23 +68,6 @@ b2Joint.prototype =
 
 	//--------------- Internals Below -------------------
 
-
-
-	initialize: function(def){
-		// initialize instance variables for references
-		this.m_node1 = new b2JointNode();
-		this.m_node2 = new b2JointNode();
-		//
-
-		this.m_type = def.type;
-		this.m_prev = null;
-		this.m_next = null;
-		this.m_body1 = def.body1;
-		this.m_body2 = def.body2;
-		this.m_collideConnected = def.collideConnected;
-		this.m_islandFlag = false;
-		this.m_userData = def.userData;
-	},
 	//virtual ~b2Joint() {}
 
 	PrepareVelocitySolver: function(){},
@@ -100,6 +98,7 @@ b2Joint.prototype =
 	// enum b2LimitState
 
 };
+
 b2Joint.Create = function(def, allocator){
 		var joint = null;
 
@@ -154,6 +153,7 @@ b2Joint.Create = function(def, allocator){
 
 		return joint;
 	};
+
 b2Joint.Destroy = function(joint, allocator){
 		/*joint->~b2Joint();
 		switch (joint.m_type)
@@ -187,6 +187,7 @@ b2Joint.Destroy = function(joint, allocator){
 			break;
 		}*/
 	};
+	
 b2Joint.e_unknownJoint = 0;
 b2Joint.e_revoluteJoint = 1;
 b2Joint.e_prismaticJoint = 2;

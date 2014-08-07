@@ -20,22 +20,21 @@
 
 
 
-var b2ContactManager = Class.create();
+var b2ContactManager = function () {
+	// The constructor for b2PairCallback
+	//
+
+	// initialize instance variables for references
+	this.m_nullContact = new b2NullContact();
+	//
+
+	this.m_world = null;
+	this.m_destroyImmediate = false;
+};
+
 Object.extend(b2ContactManager.prototype, b2PairCallback.prototype);
 Object.extend(b2ContactManager.prototype, 
 {
-	initialize: function(){
-		// The constructor for b2PairCallback
-		//
-
-		// initialize instance variables for references
-		this.m_nullContact = new b2NullContact();
-		//
-
-		this.m_world = null;
-		this.m_destroyImmediate = false;
-	},
-
 	// This is a callback from the broadphase when two AABB proxies begin
 	// to overlap. We create a b2Contact to manage the narrow phase.
 	PairAdded: function(proxyUserData1, proxyUserData2){
@@ -333,5 +332,5 @@ Object.extend(b2ContactManager.prototype,
 	// This lets us provide broadphase proxy pair user data for
 	// contacts that shouldn't exist.
 	m_nullContact: new b2NullContact(),
-	m_destroyImmediate: null});
-
+	m_destroyImmediate: null
+});

@@ -22,10 +22,9 @@
 
 
 
-var b2WorldListener = Class.create();
+var b2WorldListener = function () {};
 b2WorldListener.prototype = 
 {
-
 	// If a body is destroyed, then any joints attached to it are also destroyed.
 	// This prevents memory leaks, but you may unexpectedly be left with an
 	// orphaned joint pointer.
@@ -43,10 +42,8 @@ b2WorldListener.prototype =
 	{
 		//NOT_USED(body);
 		return b2WorldListener.b2_freezeBody;
-	},
+	}
+};
 
-
-
-	initialize: function() {}};
 b2WorldListener.b2_freezeBody = 0;
 b2WorldListener.b2_destroyBody = 1;

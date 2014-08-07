@@ -20,21 +20,19 @@
 
 
 
-var b2JointDef = Class.create();
+var b2JointDef = function () {
+	this.type = b2Joint.e_unknownJoint;
+	this.userData = null;
+	this.body1 = null;
+	this.body2 = null;
+	this.collideConnected = false;
+};
+
 b2JointDef.prototype = 
 {
-
-	initialize: function()
-	{
-		this.type = b2Joint.e_unknownJoint;
-		this.userData = null;
-		this.body1 = null;
-		this.body2 = null;
-		this.collideConnected = false;
-	},
-
 	type: 0,
 	userData: null,
 	body1: null,
 	body2: null,
-	collideConnected: null}
+	collideConnected: null
+}

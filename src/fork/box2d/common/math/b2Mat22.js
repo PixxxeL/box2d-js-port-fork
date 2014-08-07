@@ -20,29 +20,27 @@
 
 
 
-var b2Mat22 = Class.create();
+var b2Mat22 = function (angle, c1, c2) {
+	if (angle==null) angle = 0;
+	// initialize instance variables for references
+	this.col1 = new b2Vec2();
+	this.col2 = new b2Vec2();
+	//
+
+	if (c1!=null && c2!=null){
+		this.col1.SetV(c1);
+		this.col2.SetV(c2);
+	}
+	else{
+		var c = Math.cos(angle);
+		var s = Math.sin(angle);
+		this.col1.x = c; this.col2.x = -s;
+		this.col1.y = s; this.col2.y = c;
+	}
+};
+
 b2Mat22.prototype = 
 {
-	initialize: function(angle, c1, c2)
-	{
-		if (angle==null) angle = 0;
-		// initialize instance variables for references
-		this.col1 = new b2Vec2();
-		this.col2 = new b2Vec2();
-		//
-
-		if (c1!=null && c2!=null){
-			this.col1.SetV(c1);
-			this.col2.SetV(c2);
-		}
-		else{
-			var c = Math.cos(angle);
-			var s = Math.sin(angle);
-			this.col1.x = c; this.col2.x = -s;
-			this.col1.y = s; this.col2.y = c;
-		}
-	},
-
 	Set: function(angle)
 	{
 		var c = Math.cos(angle);
@@ -127,4 +125,5 @@ b2Mat22.prototype =
 	},
 
 	col1: new b2Vec2(),
-	col2: new b2Vec2()};
+	col2: new b2Vec2()
+};

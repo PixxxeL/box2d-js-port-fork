@@ -18,7 +18,7 @@
 
 
 
-var b2PairCallback = Class.create();
+var b2PairCallback = function () {};
 b2PairCallback.prototype = 
 {
 	//virtual ~b2PairCallback() {}
@@ -28,7 +28,8 @@ b2PairCallback.prototype =
 
 	// This should free the pair's user data. In extreme circumstances, it is possible
 	// this will be called with null pairUserData because the pair never existed.
-	PairRemoved: function(proxyUserData1, proxyUserData2, pairUserData){},
-	initialize: function() {}};
+	PairRemoved: function(proxyUserData1, proxyUserData2, pairUserData){}
+
+};
 
 
