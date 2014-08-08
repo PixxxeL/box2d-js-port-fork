@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2CollisionFilter
+ * @constructor
+ */
 var b2CollisionFilter = function () {};
 b2CollisionFilter.prototype = 
 {

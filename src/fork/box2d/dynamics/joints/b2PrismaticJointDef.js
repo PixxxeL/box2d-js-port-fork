@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2PrismaticJointDef
+ * @constructor
+ */
 var b2PrismaticJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;

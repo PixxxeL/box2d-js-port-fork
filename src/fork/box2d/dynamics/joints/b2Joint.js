@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2Joint
+ * @constructor
+ */
 var b2Joint = function (def) {
 	// initialize instance variables for references
 	this.m_node1 = new b2JointNode();

@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2MassData
+ * @constructor
+ */
 var b2MassData = function () {
     // initialize instance variables for references
     this.center = new b2Vec2(0,0);

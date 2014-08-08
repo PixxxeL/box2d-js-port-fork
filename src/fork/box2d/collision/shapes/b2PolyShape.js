@@ -16,18 +16,20 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// A convex polygon. The position of the polygon (m_position) is the
-// position of the centroid. The vertices of the incoming polygon are pre-rotated
-// according to the local rotation. The vertices are also shifted to be centered
-// on the centroid. Since the local rotation is absorbed into the vertex
-// coordinates, the polygon rotation is equal to the body rotation. However,
-// the polygon position is centered on the polygon centroid. This simplifies
-// some collision algorithms.
-
+/**
+ * A convex polygon
+ *
+ * The position of the polygon (m_position) is the
+ * position of the centroid. The vertices of the incoming polygon are pre-rotated
+ * according to the local rotation. The vertices are also shifted to be centered
+ * on the centroid. Since the local rotation is absorbed into the vertex
+ * coordinates, the polygon rotation is equal to the body rotation. However,
+ * the polygon position is centered on the polygon centroid. This simplifies
+ * some collision algorithms.
+ * 
+ * @class b2PolyShape
+ * @constructor
+ */
 var b2PolyShape = function (def, body, newOrigin) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();

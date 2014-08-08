@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2ContactRegister
+ * @constructor
+ */
 var b2ContactRegister = function () {
     //
 };

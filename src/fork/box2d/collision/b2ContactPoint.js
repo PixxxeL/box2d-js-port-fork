@@ -16,9 +16,12 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// We use contact ids to facilitate warm starting.
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class b2ContactPoint
+ * @constructor
+ */
 var b2ContactPoint = function () {
     // initialize instance variables for references
 	this.position = new b2Vec2();

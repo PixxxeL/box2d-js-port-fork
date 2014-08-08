@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2CircleDef
+ * @constructor
+ */
 var b2CircleDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;

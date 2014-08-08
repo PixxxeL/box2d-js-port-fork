@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2ContactConstraintPoint
+ * @constructor
+ */
 var b2ContactConstraintPoint = function () {
     // initialize instance variables for references
 	this.localAnchor1 = new b2Vec2();

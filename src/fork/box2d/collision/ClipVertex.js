@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class ClipVertex
+ * @constructor
+ */
 var ClipVertex = function () {
     // initialize instance variables for references
     this.v = new b2Vec2();

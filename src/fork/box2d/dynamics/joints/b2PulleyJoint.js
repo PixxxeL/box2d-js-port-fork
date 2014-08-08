@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2PulleyJoint
+ * @constructor
+ */
 var b2PulleyJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references

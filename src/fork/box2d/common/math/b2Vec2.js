@@ -16,12 +16,15 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// b2Vec2 has no constructor so that it
-// can be placed in a union.
+/**
+ * b2Vec2 has no constructor so that it
+ * can be placed in a union.
+ *
+ * @class b2Vec2
+ * @constructor
+ * @param x
+ * @param y
+ */
 var b2Vec2 = function (x_, y_) {
 	this.x=x_;
 	this.y=y_;

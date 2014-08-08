@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2BufferedPair
+ * @constructor
+ */
 var b2BufferedPair = function () {
     //
 };

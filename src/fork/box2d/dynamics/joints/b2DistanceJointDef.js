@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2DistanceJointDef
+ * @constructor
+ */
 var b2DistanceJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;

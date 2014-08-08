@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2Math
+ * @constructor
+ */
 var b2Math = function () {};
 b2Math.prototype = {
 

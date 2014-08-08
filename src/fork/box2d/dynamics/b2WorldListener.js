@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2WorldListener
+ * @constructor
+ */
 var b2WorldListener = function () {};
 b2WorldListener.prototype = 
 {

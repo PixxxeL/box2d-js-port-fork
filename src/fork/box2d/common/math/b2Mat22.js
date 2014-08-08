@@ -19,7 +19,13 @@
 
 
 
-
+/**
+ * @class b2Mat22
+ * @constructor
+ * @param angle
+ * @param c1
+ * @param c2
+ */
 var b2Mat22 = function (angle, c1, c2) {
 	if (angle==null) angle = 0;
 	// initialize instance variables for references

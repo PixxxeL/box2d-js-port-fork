@@ -16,14 +16,16 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// A rigid body. Internal computation are done in terms
-// of the center of mass position. The center of mass may
-// be offset from the body's origin.
+/**
+ * A rigid body. Internal computation are done in terms
+ * of the center of mass position. The center of mass may
+ * be offset from the body's origin.
+ *
+ * @class b2Body
+ * @constructor
+ * @param bd
+ * @param world
+ */
 var b2Body = function (bd, world) {
 	// initialize instance variables for references
 	this.sMat0 = new b2Mat22();

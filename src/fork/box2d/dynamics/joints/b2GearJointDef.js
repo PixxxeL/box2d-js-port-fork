@@ -16,22 +16,23 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// A gear joint is used to connect two joints together. Either joint
-// can be a revolute or prismatic joint. You specify a gear ratio
-// to bind the motions together:
-// coordinate1 + ratio * coordinate2 = constant
-// The ratio can be negative or positive. If one joint is a revolute joint
-// and the other joint is a prismatic joint, then the ratio will have units
-// of length or units of 1/length.
-//
-// RESTRICITON: The revolute and prismatic joints must be attached to
-// a fixed body (which must be body1 on those joints).
-
+/**
+ * A gear joint is used to connect two joints together. 
+ * 
+ * Either joint can be a revolute or prismatic joint. You specify a gear ratio
+ * to bind the motions together:
+ * coordinate1 + ratio * coordinate2 = constant
+ * 
+ * The ratio can be negative or positive. If one joint is a revolute joint
+ * and the other joint is a prismatic joint, then the ratio will have units
+ * of length or units of 1/length.
+ * 
+ * RESTRICITON: The revolute and prismatic joints must be attached to
+ * a fixed body (which must be body1 on those joints).
+ * 
+ * @class b2GearJointDef
+ * @constructor
+ */
 var b2GearJointDef = function () {
     this.type = b2Joint.e_gearJoint;
 	this.joint1 = null;

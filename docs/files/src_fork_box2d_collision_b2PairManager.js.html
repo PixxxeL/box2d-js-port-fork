@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\fork\box2d\collision\b2PairManager.js - Box2D Port Fork API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="Box2D Port Fork API"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/b2AABB.html">b2AABB</a></li>
+            
+                <li><a href="../classes/b2Body.html">b2Body</a></li>
+            
+                <li><a href="../classes/b2BodyDef.html">b2BodyDef</a></li>
+            
+                <li><a href="../classes/b2Bound.html">b2Bound</a></li>
+            
+                <li><a href="../classes/b2BoundValues.html">b2BoundValues</a></li>
+            
+                <li><a href="../classes/b2BoxDef.html">b2BoxDef</a></li>
+            
+                <li><a href="../classes/b2BufferedPair.html">b2BufferedPair</a></li>
+            
+                <li><a href="../classes/b2CircleContact.html">b2CircleContact</a></li>
+            
+                <li><a href="../classes/b2CircleDef.html">b2CircleDef</a></li>
+            
+                <li><a href="../classes/b2CircleShape.html">b2CircleShape</a></li>
+            
+                <li><a href="../classes/b2Collision.html">b2Collision</a></li>
+            
+                <li><a href="../classes/b2CollisionFilter.html">b2CollisionFilter</a></li>
+            
+                <li><a href="../classes/b2Conservative.html">b2Conservative</a></li>
+            
+                <li><a href="../classes/b2Contact.html">b2Contact</a></li>
+            
+                <li><a href="../classes/b2ContactConstraint.html">b2ContactConstraint</a></li>
+            
+                <li><a href="../classes/b2ContactConstraintPoint.html">b2ContactConstraintPoint</a></li>
+            
+                <li><a href="../classes/b2ContactID.html">b2ContactID</a></li>
+            
+                <li><a href="../classes/b2ContactManager.html">b2ContactManager</a></li>
+            
+                <li><a href="../classes/b2ContactNode.html">b2ContactNode</a></li>
+            
+                <li><a href="../classes/b2ContactPoint.html">b2ContactPoint</a></li>
+            
+                <li><a href="../classes/b2ContactRegister.html">b2ContactRegister</a></li>
+            
+                <li><a href="../classes/b2ContactSolver.html">b2ContactSolver</a></li>
+            
+                <li><a href="../classes/b2Distance.html">b2Distance</a></li>
+            
+                <li><a href="../classes/b2DistanceJoint.html">b2DistanceJoint</a></li>
+            
+                <li><a href="../classes/b2DistanceJointDef.html">b2DistanceJointDef</a></li>
+            
+                <li><a href="../classes/b2GearJoint.html">b2GearJoint</a></li>
+            
+                <li><a href="../classes/b2GearJointDef.html">b2GearJointDef</a></li>
+            
+                <li><a href="../classes/b2Island.html">b2Island</a></li>
+            
+                <li><a href="../classes/b2Jacobian.html">b2Jacobian</a></li>
+            
+                <li><a href="../classes/b2Joint.html">b2Joint</a></li>
+            
+                <li><a href="../classes/b2JointDef.html">b2JointDef</a></li>
+            
+                <li><a href="../classes/b2JointNode.html">b2JointNode</a></li>
+            
+                <li><a href="../classes/b2Manifold.html">b2Manifold</a></li>
+            
+                <li><a href="../classes/b2MassData.html">b2MassData</a></li>
+            
+                <li><a href="../classes/b2Mat22.html">b2Mat22</a></li>
+            
+                <li><a href="../classes/b2Math.html">b2Math</a></li>
+            
+                <li><a href="../classes/b2MouseJoint.html">b2MouseJoint</a></li>
+            
+                <li><a href="../classes/b2MouseJointDef.html">b2MouseJointDef</a></li>
+            
+                <li><a href="../classes/b2NullContact.html">b2NullContact</a></li>
+            
+                <li><a href="../classes/b2OBB.html">b2OBB</a></li>
+            
+                <li><a href="../classes/b2Pair.html">b2Pair</a></li>
+            
+                <li><a href="../classes/b2PairCallback.html">b2PairCallback</a></li>
+            
+                <li><a href="../classes/b2PairManager.html">b2PairManager</a></li>
+            
+                <li><a href="../classes/b2PolyAndCircleContact.html">b2PolyAndCircleContact</a></li>
+            
+                <li><a href="../classes/b2PolyContact.html">b2PolyContact</a></li>
+            
+                <li><a href="../classes/b2PolyDef.html">b2PolyDef</a></li>
+            
+                <li><a href="../classes/b2PolyShape.html">b2PolyShape</a></li>
+            
+                <li><a href="../classes/b2PrismaticJoint.html">b2PrismaticJoint</a></li>
+            
+                <li><a href="../classes/b2PrismaticJointDef.html">b2PrismaticJointDef</a></li>
+            
+                <li><a href="../classes/b2Proxy.html">b2Proxy</a></li>
+            
+                <li><a href="../classes/b2PulleyJoint.html">b2PulleyJoint</a></li>
+            
+                <li><a href="../classes/b2PulleyJointDef.html">b2PulleyJointDef</a></li>
+            
+                <li><a href="../classes/b2RevoluteJoint.html">b2RevoluteJoint</a></li>
+            
+                <li><a href="../classes/b2RevoluteJointDef.html">b2RevoluteJointDef</a></li>
+            
+                <li><a href="../classes/b2Settings.html">b2Settings</a></li>
+            
+                <li><a href="../classes/b2Shape.html">b2Shape</a></li>
+            
+                <li><a href="../classes/b2ShapeDef.html">b2ShapeDef</a></li>
+            
+                <li><a href="../classes/b2TimeStep.html">b2TimeStep</a></li>
+            
+                <li><a href="../classes/b2Vec2.html">b2Vec2</a></li>
+            
+                <li><a href="../classes/b2World.html">b2World</a></li>
+            
+                <li><a href="../classes/b2WorldListener.html">b2WorldListener</a></li>
+            
+                <li><a href="../classes/ClipVertex.html">ClipVertex</a></li>
+            
+                <li><a href="../classes/Features.html">Features</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src\fork\box2d\collision\b2PairManager.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+﻿/*
+* Copyright (c) 2006-2007 Erin Catto http:
+*
+* This software is provided &#x27;as-is&#x27;, without any express or implied
+* warranty.  In no event will the authors be held liable for any damages
+* arising from the use of this software.
+* Permission is granted to anyone to use this software for any purpose,
+* including commercial applications, and to alter it and redistribute it
+* freely, subject to the following restrictions:
+* 1. The origin of this software must not be misrepresented; you must not
+* claim that you wrote the original software. If you use this software
+* in a product, an acknowledgment in the product documentation would be
+* appreciated but is not required.
+* 2. Altered source versions must be plainly marked, and must not be
+* misrepresented the original software.
+* 3. This notice may not be removed or altered from any source distribution.
+*/
+
+/**
+ * The pair manager is used by the broad-phase to quickly add/remove/find pairs
+ * of overlapping proxies. It is based closely on code provided by Pierre Terdiman.
+ * http:
+ *
+ * @class b2PairManager
+ * @constructor
+ */
+var b2PairManager = function () {
+    var i = 0;
+	//b2Settings.b2Assert(b2Math.b2IsPowerOfTwo(b2Pair.b2_tableCapacity) == true);
+	//b2Settings.b2Assert(b2Pair.b2_tableCapacity &gt;= b2Settings.b2_maxPairs);
+	this.m_hashTable = new Array(b2Pair.b2_tableCapacity);
+	for (i = 0; i &lt; b2Pair.b2_tableCapacity; ++i)
+	{
+		this.m_hashTable[i] = b2Pair.b2_nullPair;
+	}
+	this.m_pairs = new Array(b2Settings.b2_maxPairs);
+	for (i = 0; i &lt; b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairs[i] = new b2Pair();
+	}
+	this.m_pairBuffer = new Array(b2Settings.b2_maxPairs);
+	for (i = 0; i &lt; b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairBuffer[i] = new b2BufferedPair();
+	}
+
+	for (i = 0; i &lt; b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairs[i].proxyId1 = b2Pair.b2_nullProxy;
+		this.m_pairs[i].proxyId2 = b2Pair.b2_nullProxy;
+		this.m_pairs[i].userData = null;
+		this.m_pairs[i].status = 0;
+		this.m_pairs[i].next = (i + 1);
+	}
+	this.m_pairs[b2Settings.b2_maxPairs-1].next = b2Pair.b2_nullPair;
+	this.m_pairCount = 0;
+};
+
+b2PairManager.prototype = 
+{
+//public:
+	//~b2PairManager();
+
+	Initialize: function(broadPhase, callback){
+		this.m_broadPhase = broadPhase;
+		this.m_callback = callback;
+	},
+
+	/*
+	As proxies are created and moved, many pairs are created and destroyed. Even worse, the same
+	pair may be added and removed multiple times in a single time step of the physics engine. To reduce
+	traffic in the pair manager, we try to avoid destroying pairs in the pair manager until the
+	end of the physics step. This is done by buffering all the this.RemovePair requests. this.AddPair
+	requests are processed immediately because we need the hash table entry for quick lookup.
+
+	All user user callbacks are delayed until the buffered pairs are confirmed in this.Commit.
+	This is very important because the user callbacks may be very expensive and client logic
+	may be harmed if pairs are added and removed within the same time step.
+
+	Buffer a pair for addition.
+	We may add a pair that is not in the pair manager or pair buffer.
+	We may add a pair that is already in the pair manager and pair buffer.
+	If the added pair is not a new pair, then it must be in the pair buffer (because this.RemovePair was called).
+	*/
+	AddBufferedPair: function(proxyId1, proxyId2){
+		//b2Settings.b2Assert(id1 != b2_nullProxy &amp;&amp; id2 != b2_nullProxy);
+		//b2Settings.b2Assert(this.m_pairBufferCount &lt; b2_maxPairs);
+
+		var pair = this.AddPair(proxyId1, proxyId2);
+
+		// If this pair is not in the pair buffer ...
+		if (pair.IsBuffered() == false)
+		{
+			// This must be a newly added pair.
+			//b2Settings.b2Assert(pair.IsFinal() == false);
+
+			// Add it to the pair buffer.
+			pair.SetBuffered();
+			this.m_pairBuffer[this.m_pairBufferCount].proxyId1 = pair.proxyId1;
+			this.m_pairBuffer[this.m_pairBufferCount].proxyId2 = pair.proxyId2;
+			++this.m_pairBufferCount;
+
+			//b2Settings.b2Assert(this.m_pairBufferCount &lt;= this.m_pairCount);
+		}
+
+		// Confirm this pair for the subsequent call to this.Commit.
+		pair.ClearRemoved();
+
+		if (b2BroadPhase.s_validate)
+		{
+			this.ValidateBuffer();
+		}
+	},
+
+	// Buffer a pair for removal.
+	RemoveBufferedPair: function(proxyId1, proxyId2){
+		//b2Settings.b2Assert(id1 != b2_nullProxy &amp;&amp; id2 != b2_nullProxy);
+		//b2Settings.b2Assert(this.m_pairBufferCount &lt; b2_maxPairs);
+
+		var pair = this.Find(proxyId1, proxyId2);
+
+		if (pair == null)
+		{
+			// The pair never existed. This is legal (due to collision filtering).
+			return;
+		}
+
+		// If this pair is not in the pair buffer ...
+		if (pair.IsBuffered() == false)
+		{
+			// This must be an old pair.
+			//b2Settings.b2Assert(pair.IsFinal() == true);
+
+			pair.SetBuffered();
+			this.m_pairBuffer[this.m_pairBufferCount].proxyId1 = pair.proxyId1;
+			this.m_pairBuffer[this.m_pairBufferCount].proxyId2 = pair.proxyId2;
+			++this.m_pairBufferCount;
+
+			//b2Settings.b2Assert(this.m_pairBufferCount &lt;= this.m_pairCount);
+		}
+
+		pair.SetRemoved();
+
+		if (b2BroadPhase.s_validate)
+		{
+			this.ValidateBuffer();
+		}
+	},
+
+	Commit: function(){
+		var i = 0;
+
+		var removeCount = 0;
+
+		var proxies = this.m_broadPhase.m_proxyPool;
+
+		for (i = 0; i &lt; this.m_pairBufferCount; ++i)
+		{
+			var pair = this.Find(this.m_pairBuffer[i].proxyId1, this.m_pairBuffer[i].proxyId2);
+			//b2Settings.b2Assert(pair.IsBuffered());
+			pair.ClearBuffered();
+
+			//b2Settings.b2Assert(pair.proxyId1 &lt; b2Settings.b2_maxProxies &amp;&amp; pair.proxyId2 &lt; b2Settings.b2_maxProxies);
+
+			var proxy1 = proxies[ pair.proxyId1 ];
+			var proxy2 = proxies[ pair.proxyId2 ];
+
+			//b2Settings.b2Assert(proxy1.IsValid());
+			//b2Settings.b2Assert(proxy2.IsValid());
+
+			if (pair.IsRemoved())
+			{
+				// It is possible a pair was added then removed before a commit. Therefore,
+				// we should be careful not to tell the user the pair was removed when the
+				// the user didn&#x27;t receive a matching add.
+				if (pair.IsFinal() == true)
+				{
+					this.m_callback.PairRemoved(proxy1.userData, proxy2.userData, pair.userData);
+				}
+
+				// Store the ids so we can actually remove the pair below.
+				this.m_pairBuffer[removeCount].proxyId1 = pair.proxyId1;
+				this.m_pairBuffer[removeCount].proxyId2 = pair.proxyId2;
+				++removeCount;
+			}
+			else
+			{
+				//b2Settings.b2Assert(this.m_broadPhase.TestOverlap(proxy1, proxy2) == true);
+
+				if (pair.IsFinal() == false)
+				{
+					pair.userData = this.m_callback.PairAdded(proxy1.userData, proxy2.userData);
+					pair.SetFinal();
+				}
+			}
+		}
+
+		for (i = 0; i &lt; removeCount; ++i)
+		{
+			this.RemovePair(this.m_pairBuffer[i].proxyId1, this.m_pairBuffer[i].proxyId2);
+		}
+
+		this.m_pairBufferCount = 0;
+
+		if (b2BroadPhase.s_validate)
+		{
+			this.ValidateTable();
+		}
+	},
+
+//private:
+
+	// Add a pair and return the new pair. If the pair already exists,
+	// no new pair is created and the old one is returned.
+	AddPair: function(proxyId1, proxyId2){
+
+		if (proxyId1 &gt; proxyId2){
+			var temp = proxyId1;
+			proxyId1 = proxyId2;
+			proxyId2 = temp;
+			//b2Math.b2Swap(p1, p2);
+		}
+
+		var hash = b2PairManager.Hash(proxyId1, proxyId2) &amp; b2Pair.b2_tableMask;
+
+		//var pairIndex = this.FindHash(proxyId1, proxyId2, hash);
+		var pair = pair = this.FindHash(proxyId1, proxyId2, hash);
+
+		if (pair != null)
+		{
+			return pair;
+		}
+
+		//b2Settings.b2Assert(this.m_pairCount &lt; b2Settings.b2_maxPairs &amp;&amp; this.m_freePair != b2_nullPair);
+
+		var pIndex = this.m_freePair;
+		pair = this.m_pairs[pIndex];
+		this.m_freePair = pair.next;
+
+		pair.proxyId1 = proxyId1;
+		pair.proxyId2 = proxyId2;
+		pair.status = 0;
+		pair.userData = null;
+		pair.next = this.m_hashTable[hash];
+
+		this.m_hashTable[hash] = pIndex;
+
+		++this.m_pairCount;
+
+		return pair;
+	},
+
+	// Remove a pair, return the pair&#x27;s userData.
+	RemovePair: function(proxyId1, proxyId2){
+
+		//b2Settings.b2Assert(this.m_pairCount &gt; 0);
+
+		if (proxyId1 &gt; proxyId2){
+			var temp = proxyId1;
+			proxyId1 = proxyId2;
+			proxyId2 = temp;
+			//b2Math.b2Swap(proxyId1, proxyId2);
+		}
+
+		var hash = b2PairManager.Hash(proxyId1, proxyId2) &amp; b2Pair.b2_tableMask;
+
+		var node = this.m_hashTable[hash];
+		var pNode = null;
+
+		while (node != b2Pair.b2_nullPair)
+		{
+			if (b2PairManager.Equals(this.m_pairs[node], proxyId1, proxyId2))
+			{
+				var index = node;
+
+				//*node = this.m_pairs[*node].next;
+				if (pNode){
+					pNode.next = this.m_pairs[node].next;
+				}
+				else{
+					this.m_hashTable[hash] = this.m_pairs[node].next;
+				}
+
+				var pair = this.m_pairs[ index ];
+				var userData = pair.userData;
+
+				// Scrub
+				pair.next = this.m_freePair;
+				pair.proxyId1 = b2Pair.b2_nullProxy;
+				pair.proxyId2 = b2Pair.b2_nullProxy;
+				pair.userData = null;
+				pair.status = 0;
+
+				this.m_freePair = index;
+				--this.m_pairCount;
+				return userData;
+			}
+			else
+			{
+				//node = &amp;this.m_pairs[*node].next;
+				pNode = this.m_pairs[node];
+				node = pNode.next;
+			}
+		}
+
+		//b2Settings.b2Assert(false);
+		return null;
+	},
+
+	Find: function(proxyId1, proxyId2){
+
+		if (proxyId1 &gt; proxyId2){
+			var temp = proxyId1;
+			proxyId1 = proxyId2;
+			proxyId2 = temp;
+			//b2Math.b2Swap(proxyId1, proxyId2);
+		}
+
+		var hash = b2PairManager.Hash(proxyId1, proxyId2) &amp; b2Pair.b2_tableMask;
+
+		return this.FindHash(proxyId1, proxyId2, hash);
+	},
+	FindHash: function(proxyId1, proxyId2, hash){
+		var index = this.m_hashTable[hash];
+
+		while( index != b2Pair.b2_nullPair &amp;&amp; b2PairManager.Equals(this.m_pairs[index], proxyId1, proxyId2) == false)
+		{
+			index = this.m_pairs[index].next;
+		}
+
+		if ( index == b2Pair.b2_nullPair )
+		{
+			return null;
+		}
+
+		//b2Settings.b2Assert(index &lt; b2_maxPairs);
+
+		return this.m_pairs[ index ];
+	},
+
+	ValidateBuffer: function(){
+		// DEBUG
+	},
+
+	ValidateTable: function(){
+		// DEBUG
+	},
+
+//public:
+	m_broadPhase: null,
+	m_callback: null,
+	m_pairs: null,
+	m_freePair: 0,
+	m_pairCount: 0,
+
+	m_pairBuffer: null,
+	m_pairBufferCount: 0,
+
+	m_hashTable: null
+
+
+// static
+	// Thomas Wang&#x27;s hash, see: http:
+
+
+
+};
+b2PairManager.Hash = function(proxyId1, proxyId2)
+	{
+		var key = ((proxyId2 &lt;&lt; 16) &amp; 0xffff0000) | proxyId1;
+		key = ~key + ((key &lt;&lt; 15) &amp; 0xFFFF8000);
+		key = key ^ ((key &gt;&gt; 12) &amp; 0x000fffff);
+		key = key + ((key &lt;&lt; 2) &amp; 0xFFFFFFFC);
+		key = key ^ ((key &gt;&gt; 4) &amp; 0x0fffffff);
+		key = key * 2057;
+		key = key ^ ((key &gt;&gt; 16) &amp; 0x0000ffff);
+		return key;
+	};
+b2PairManager.Equals = function(pair, proxyId1, proxyId2)
+	{
+		return (pair.proxyId1 == proxyId1 &amp;&amp; pair.proxyId2 == proxyId2);
+	};
+b2PairManager.EqualsPair = function(pair1, pair2)
+	{
+		return pair1.proxyId1 == pair2.proxyId1 &amp;&amp; pair1.proxyId2 == pair2.proxyId2;
+	};
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2ContactManager
+ * @constructor
+ */
 var b2ContactManager = function () {
 	// The constructor for b2PairCallback
 	//

@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2PolyDef
+ * @constructor
+ */
 var b2PolyDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;

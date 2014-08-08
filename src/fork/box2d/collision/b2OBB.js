@@ -16,9 +16,12 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * A manifold for two touching convex shapes.
+ * 
+ * @class b2OBB
+ * @constructor
+ */
 var b2OBB = function () {
     // initialize instance variables for references
     this.R = new b2Mat22();

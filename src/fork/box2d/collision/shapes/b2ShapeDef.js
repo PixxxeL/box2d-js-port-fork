@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2ShapeDef
+ * @constructor
+ */
 var b2ShapeDef = function () {
     this.type = b2Shape.e_unknownShape;
 	this.userData = null;

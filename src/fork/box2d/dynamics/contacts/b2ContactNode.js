@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2ContactNode
+ * @constructor
+ */
 var b2ContactNode = function () {
     //
 };

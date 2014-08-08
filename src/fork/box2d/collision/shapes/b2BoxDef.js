@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2BoxDef
+ * @constructor
+ */
 var b2BoxDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;

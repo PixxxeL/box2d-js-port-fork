@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2BoundValues
+ * @constructor
+ */
 var b2BoundValues = function () {
     // initialize instance variables for references
     this.lowerValues = [0,0];

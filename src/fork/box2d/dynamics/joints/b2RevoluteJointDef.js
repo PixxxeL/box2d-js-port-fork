@@ -20,7 +20,10 @@
 
 
 
-
+/**
+ * @class b2RevoluteJointDef
+ * @constructor
+ */
 var b2RevoluteJointDef = function () {
 
 	// The constructor for b2JointDef

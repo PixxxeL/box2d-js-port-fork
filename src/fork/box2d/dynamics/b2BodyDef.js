@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2BodyDef
+ * @constructor
+ */
 var b2BodyDef = function () {
 	// initialize instance variables for references
 	this.shapes = new Array();

@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2ContactConstraint
+ * @constructor
+ */
 var b2ContactConstraint = function () {
     // initialize instance variables for references
 	this.normal = new b2Vec2();

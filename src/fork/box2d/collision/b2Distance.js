@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2Distance
+ * @constructor
+ */
 var b2Distance = function () {
     //
 };

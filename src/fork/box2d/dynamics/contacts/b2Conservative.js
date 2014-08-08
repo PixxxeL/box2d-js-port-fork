@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2Conservative
+ * @constructor
+ */
 var b2Conservative = function () {
     //
 };

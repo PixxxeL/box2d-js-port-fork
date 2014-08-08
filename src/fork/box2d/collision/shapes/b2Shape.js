@@ -16,15 +16,13 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-
-
-// Shapes are created automatically when a body is created.
-// Client code does not normally interact with shapes.
+/**
+ * Shapes are created automatically when a body is created.
+ * Client code does not normally interact with shapes.
+ *
+ * @class b2Shape
+ * @constructor
+ */
 var b2Shape = function (def, body) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();

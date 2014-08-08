@@ -18,7 +18,10 @@
 
 
 
-
+/**
+ * @class b2CircleContact
+ * @constructor
+ */
 var b2CircleContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references

@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2Jacobian
+ * @constructor
+ */
 var b2Jacobian = function () {
     // initialize instance variables for references
 	this.linear1 = new b2Vec2();

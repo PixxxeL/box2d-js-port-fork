@@ -16,8 +16,12 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-// We use contact ids to facilitate warm starting.
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class Features
+ * @constructor
+ */
 var Features = function () {
     //
 };

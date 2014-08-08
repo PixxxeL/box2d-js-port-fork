@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2PolyAndCircleContact
+ * @constructor
+ */
 var b2PolyAndCircleContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references

@@ -16,30 +16,27 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-/*
-This broad phase uses the Sweep and Prune algorithm in:
-Collision Detection in Interactive 3D Environments by Gino van den Bergen
-Also, some ideas, such integral values for fast compares comes from
-Bullet (http:/www.bulletphysics.com).
-*/
-
-
-// Notes:
-// - we use bound arrays instead of linked lists for cache coherence.
-// - we use quantized integral values for fast compares.
-// - we use short indices rather than pointers to save memory.
-// - we use a stabbing count for fast overlap queries (less than order N).
-// - we also use a time stamp on each proxy to speed up the registration of
-//   overlap query results.
-// - where possible, we compare bound indices instead of values to reduce
-//   cache misses (TODO_ERIN).
-// - no broadphase is perfect and neither is this one: it is not great for huge
-//   worlds (use a multi-SAP instead), it is not great for large objects.
-
+/**
+ * This broad phase uses the Sweep and Prune algorithm in:
+ * Collision Detection in Interactive 3D Environments by Gino van den Bergen
+ * Also, some ideas, such integral values for fast compares comes from
+ * Bullet (http:/www.bulletphysics.com).
+ * 
+ * Notes:
+ * - we use bound arrays instead of linked lists for cache coherence.
+ * - we use quantized integral values for fast compares.
+ * - we use short indices rather than pointers to save memory.
+ * - we use a stabbing count for fast overlap queries (less than order N).
+ * - we also use a time stamp on each proxy to speed up the registration of
+ *   overlap query results.
+ * - where possible, we compare bound indices instead of values to reduce
+ *   cache misses (TODO_ERIN).
+ * - no broadphase is perfect and neither is this one: it is not great for huge
+ *   worlds (use a multi-SAP instead), it is not great for large objects.
+ * 
+ * @class b2Bound
+ * @constructor
+ */
 var b2BroadPhase = function (worldAABB, callback) {
     // initialize instance variables for references
 	this.m_pairManager = new b2PairManager();

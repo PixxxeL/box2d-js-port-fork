@@ -16,10 +16,13 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// We use contact ids to facilitate warm starting.
-var b2ContactID = function () {
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class b2ContactID
+ * @constructor
+ */
+var  = function () {
     // initialize instance variables for references
 	this.features = new Features();
 	//

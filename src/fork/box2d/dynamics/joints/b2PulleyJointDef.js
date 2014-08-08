@@ -16,18 +16,18 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// The pulley joint is connected to two bodies and two fixed ground points.
-// The pulley supports a ratio such that:
-// length1 + ratio * length2 = constant
-// Yes, the force transmitted is scaled by the ratio.
-// The pulley also enforces a maximum length limit on both sides. This is
-// useful to prevent one side of the pulley hitting the top.
-
+/**
+ * The pulley joint is connected to two bodies and two fixed ground points.
+ * 
+ * The pulley supports a ratio such that:
+ * length1 + ratio * length2 = constant
+ * Yes, the force transmitted is scaled by the ratio.
+ * The pulley also enforces a maximum length limit on both sides. This is
+ * useful to prevent one side of the pulley hitting the top.
+ * 
+ * @class b2PulleyJointDef
+ * @constructor
+ */
 var b2PulleyJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;

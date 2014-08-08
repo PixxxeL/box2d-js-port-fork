@@ -24,7 +24,10 @@
 //typedef void b2ContactDestroyFcn(b2Contact* contact, b2BlockAllocator* allocator);
 
 
-
+/**
+ * @class b2Contact
+ * @constructor
+ */
 var b2Contact = function (s1, s2) {
     // initialize instance variables for references
 	this.m_node1 = new b2ContactNode();

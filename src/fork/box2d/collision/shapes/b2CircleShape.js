@@ -21,7 +21,10 @@
 
 
 
-
+/**
+ * @class b2CircleShape
+ * @constructor
+ */
 var b2CircleShape = function (def, body, localCenter) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();

@@ -20,7 +20,10 @@
 
 
 
-
+/**
+ * @class b2GearJoint
+ * @constructor
+ */
 var b2GearJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references

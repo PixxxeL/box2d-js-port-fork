@@ -1,0 +1,1560 @@
+{
+    "project": {
+        "name": "Box2D Port Fork API",
+        "description": "Fork of port (from Flash to js) of Box2D Physics Engine for Javascript",
+        "version": "1.0.0"
+    },
+    "files": {
+        "src\\fork\\box2d\\collision\\shapes\\b2BoxDef.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2BoxDef.js",
+            "modules": {},
+            "classes": {
+                "b2BoxDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2CircleDef.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2CircleDef.js",
+            "modules": {},
+            "classes": {
+                "b2CircleDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2CircleShape.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2CircleShape.js",
+            "modules": {},
+            "classes": {
+                "b2CircleShape": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2MassData.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2MassData.js",
+            "modules": {},
+            "classes": {
+                "b2MassData": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2PolyDef.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2PolyDef.js",
+            "modules": {},
+            "classes": {
+                "b2PolyDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2PolyShape.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2PolyShape.js",
+            "modules": {},
+            "classes": {
+                "b2PolyShape": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2Shape.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2Shape.js",
+            "modules": {},
+            "classes": {
+                "b2Shape": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\shapes\\b2ShapeDef.js": {
+            "name": "src\\fork\\box2d\\collision\\shapes\\b2ShapeDef.js",
+            "modules": {},
+            "classes": {
+                "b2ShapeDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\ClipVertex.js": {
+            "name": "src\\fork\\box2d\\collision\\ClipVertex.js",
+            "modules": {},
+            "classes": {
+                "ClipVertex": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\Features.js": {
+            "name": "src\\fork\\box2d\\collision\\Features.js",
+            "modules": {},
+            "classes": {
+                "Features": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2AABB.js": {
+            "name": "src\\fork\\box2d\\collision\\b2AABB.js",
+            "modules": {},
+            "classes": {
+                "b2AABB": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Bound.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Bound.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2BoundValues.js": {
+            "name": "src\\fork\\box2d\\collision\\b2BoundValues.js",
+            "modules": {},
+            "classes": {
+                "b2BoundValues": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2BroadPhase.js": {
+            "name": "src\\fork\\box2d\\collision\\b2BroadPhase.js",
+            "modules": {},
+            "classes": {
+                "b2Bound": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2BufferedPair.js": {
+            "name": "src\\fork\\box2d\\collision\\b2BufferedPair.js",
+            "modules": {},
+            "classes": {
+                "b2BufferedPair": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Collision.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Collision.js",
+            "modules": {},
+            "classes": {
+                "b2Collision": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2ContactID.js": {
+            "name": "src\\fork\\box2d\\collision\\b2ContactID.js",
+            "modules": {},
+            "classes": {
+                "b2ContactID": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2ContactPoint.js": {
+            "name": "src\\fork\\box2d\\collision\\b2ContactPoint.js",
+            "modules": {},
+            "classes": {
+                "b2ContactPoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Distance.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Distance.js",
+            "modules": {},
+            "classes": {
+                "b2Distance": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Manifold.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Manifold.js",
+            "modules": {},
+            "classes": {
+                "b2Manifold": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2OBB.js": {
+            "name": "src\\fork\\box2d\\collision\\b2OBB.js",
+            "modules": {},
+            "classes": {
+                "b2OBB": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Pair.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Pair.js",
+            "modules": {},
+            "classes": {
+                "b2Pair": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2PairCallback.js": {
+            "name": "src\\fork\\box2d\\collision\\b2PairCallback.js",
+            "modules": {},
+            "classes": {
+                "b2PairCallback": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2PairManager.js": {
+            "name": "src\\fork\\box2d\\collision\\b2PairManager.js",
+            "modules": {},
+            "classes": {
+                "b2PairManager": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\collision\\b2Proxy.js": {
+            "name": "src\\fork\\box2d\\collision\\b2Proxy.js",
+            "modules": {},
+            "classes": {
+                "b2Proxy": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\common\\math\\b2Mat22.js": {
+            "name": "src\\fork\\box2d\\common\\math\\b2Mat22.js",
+            "modules": {},
+            "classes": {
+                "b2Mat22": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\common\\math\\b2Math.js": {
+            "name": "src\\fork\\box2d\\common\\math\\b2Math.js",
+            "modules": {},
+            "classes": {
+                "b2Math": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\common\\math\\b2Vec2.js": {
+            "name": "src\\fork\\box2d\\common\\math\\b2Vec2.js",
+            "modules": {},
+            "classes": {
+                "b2Vec2": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\common\\b2Settings.js": {
+            "name": "src\\fork\\box2d\\common\\b2Settings.js",
+            "modules": {},
+            "classes": {
+                "b2Settings": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2CircleContact.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2CircleContact.js",
+            "modules": {},
+            "classes": {
+                "b2CircleContact": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2Conservative.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2Conservative.js",
+            "modules": {},
+            "classes": {
+                "b2Conservative": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2Contact.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2Contact.js",
+            "modules": {},
+            "classes": {
+                "b2Contact": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraint.js",
+            "modules": {},
+            "classes": {
+                "b2ContactConstraint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraintPoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraintPoint.js",
+            "modules": {},
+            "classes": {
+                "b2ContactConstraintPoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2ContactNode.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactNode.js",
+            "modules": {},
+            "classes": {
+                "b2ContactNode": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2ContactRegister.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactRegister.js",
+            "modules": {},
+            "classes": {
+                "b2ContactRegister": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2ContactSolver.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactSolver.js",
+            "modules": {},
+            "classes": {
+                "b2ContactSolver": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2NullContact.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2NullContact.js",
+            "modules": {},
+            "classes": {
+                "b2NullContact": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2PolyAndCircleContact.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2PolyAndCircleContact.js",
+            "modules": {},
+            "classes": {
+                "b2PolyAndCircleContact": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\contacts\\b2PolyContact.js": {
+            "name": "src\\fork\\box2d\\dynamics\\contacts\\b2PolyContact.js",
+            "modules": {},
+            "classes": {
+                "b2PolyContact": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJoint.js",
+            "modules": {},
+            "classes": {
+                "b2DistanceJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2DistanceJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2GearJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2GearJoint.js",
+            "modules": {},
+            "classes": {
+                "b2GearJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2GearJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2GearJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2GearJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2Jacobian.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2Jacobian.js",
+            "modules": {},
+            "classes": {
+                "b2Jacobian": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2Joint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2Joint.js",
+            "modules": {},
+            "classes": {
+                "b2Joint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2JointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2JointDef.js",
+            "modules": {},
+            "classes": {
+                "b2JointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2JointNode.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2JointNode.js",
+            "modules": {},
+            "classes": {
+                "b2JointNode": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2MouseJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2MouseJoint.js",
+            "modules": {},
+            "classes": {
+                "b2MouseJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2MouseJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2MouseJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2MouseJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJoint.js",
+            "modules": {},
+            "classes": {
+                "b2PrismaticJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2PrismaticJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJoint.js",
+            "modules": {},
+            "classes": {
+                "b2PulleyJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2PulleyJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJoint.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJoint.js",
+            "modules": {},
+            "classes": {
+                "b2RevoluteJoint": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJointDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJointDef.js",
+            "modules": {},
+            "classes": {
+                "b2RevoluteJointDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2Body.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2Body.js",
+            "modules": {},
+            "classes": {
+                "b2Body": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2BodyDef.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2BodyDef.js",
+            "modules": {},
+            "classes": {
+                "b2BodyDef": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2CollisionFilter.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2CollisionFilter.js",
+            "modules": {},
+            "classes": {
+                "b2CollisionFilter": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2ContactManager.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2ContactManager.js",
+            "modules": {},
+            "classes": {
+                "b2ContactManager": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2Island.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2Island.js",
+            "modules": {},
+            "classes": {
+                "b2Island": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2TimeStep.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2TimeStep.js",
+            "modules": {},
+            "classes": {
+                "b2TimeStep": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2World.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "modules": {},
+            "classes": {
+                "b2World": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\fork\\box2d\\dynamics\\b2WorldListener.js": {
+            "name": "src\\fork\\box2d\\dynamics\\b2WorldListener.js",
+            "modules": {},
+            "classes": {
+                "b2WorldListener": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "b2BoxDef": {
+            "name": "b2BoxDef",
+            "shortname": "b2BoxDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2BoxDef.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2CircleDef": {
+            "name": "b2CircleDef",
+            "shortname": "b2CircleDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2CircleDef.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2CircleShape": {
+            "name": "b2CircleShape",
+            "shortname": "b2CircleShape",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2CircleShape.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2MassData": {
+            "name": "b2MassData",
+            "shortname": "b2MassData",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2MassData.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2PolyDef": {
+            "name": "b2PolyDef",
+            "shortname": "b2PolyDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2PolyDef.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2PolyShape": {
+            "name": "b2PolyShape",
+            "shortname": "b2PolyShape",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2PolyShape.js",
+            "line": 19,
+            "description": "A convex polygon\n\nThe position of the polygon (m_position) is the\nposition of the centroid. The vertices of the incoming polygon are pre-rotated\naccording to the local rotation. The vertices are also shifted to be centered\non the centroid. Since the local rotation is absorbed into the vertex\ncoordinates, the polygon rotation is equal to the body rotation. However,\nthe polygon position is centered on the polygon centroid. This simplifies\nsome collision algorithms.",
+            "is_constructor": 1
+        },
+        "b2Shape": {
+            "name": "b2Shape",
+            "shortname": "b2Shape",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2Shape.js",
+            "line": 19,
+            "description": "Shapes are created automatically when a body is created.\nClient code does not normally interact with shapes.",
+            "is_constructor": 1
+        },
+        "b2ShapeDef": {
+            "name": "b2ShapeDef",
+            "shortname": "b2ShapeDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\shapes\\b2ShapeDef.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "ClipVertex": {
+            "name": "ClipVertex",
+            "shortname": "ClipVertex",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\ClipVertex.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "Features": {
+            "name": "Features",
+            "shortname": "Features",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\Features.js",
+            "line": 19,
+            "description": "We use contact ids to facilitate warm starting.",
+            "is_constructor": 1
+        },
+        "b2AABB": {
+            "name": "b2AABB",
+            "shortname": "b2AABB",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2AABB.js",
+            "line": 19,
+            "description": "A manifold for two touching convex shapes.",
+            "is_constructor": 1
+        },
+        "b2Bound": {
+            "name": "b2Bound",
+            "shortname": "b2Bound",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2BroadPhase.js",
+            "line": 19,
+            "is_constructor": 1,
+            "description": "This broad phase uses the Sweep and Prune algorithm in:\nCollision Detection in Interactive 3D Environments by Gino van den Bergen\nAlso, some ideas, such integral values for fast compares comes from\nBullet (http:/www.bulletphysics.com).\n\nNotes:\n- we use bound arrays instead of linked lists for cache coherence.\n- we use quantized integral values for fast compares.\n- we use short indices rather than pointers to save memory.\n- we use a stabbing count for fast overlap queries (less than order N).\n- we also use a time stamp on each proxy to speed up the registration of\n  overlap query results.\n- where possible, we compare bound indices instead of values to reduce\n  cache misses (TODO_ERIN).\n- no broadphase is perfect and neither is this one: it is not great for huge\n  worlds (use a multi-SAP instead), it is not great for large objects."
+        },
+        "b2BoundValues": {
+            "name": "b2BoundValues",
+            "shortname": "b2BoundValues",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2BoundValues.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2BufferedPair": {
+            "name": "b2BufferedPair",
+            "shortname": "b2BufferedPair",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2BufferedPair.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2Collision": {
+            "name": "b2Collision",
+            "shortname": "b2Collision",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2Collision.js",
+            "line": 21,
+            "is_constructor": 1
+        },
+        "b2ContactID": {
+            "name": "b2ContactID",
+            "shortname": "b2ContactID",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2ContactID.js",
+            "line": 19,
+            "description": "We use contact ids to facilitate warm starting.",
+            "is_constructor": 1
+        },
+        "b2ContactPoint": {
+            "name": "b2ContactPoint",
+            "shortname": "b2ContactPoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2ContactPoint.js",
+            "line": 19,
+            "description": "We use contact ids to facilitate warm starting.",
+            "is_constructor": 1
+        },
+        "b2Distance": {
+            "name": "b2Distance",
+            "shortname": "b2Distance",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2Distance.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2Manifold": {
+            "name": "b2Manifold",
+            "shortname": "b2Manifold",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2Manifold.js",
+            "line": 19,
+            "description": "A manifold for two touching convex shapes.",
+            "is_constructor": 1
+        },
+        "b2OBB": {
+            "name": "b2OBB",
+            "shortname": "b2OBB",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2OBB.js",
+            "line": 19,
+            "description": "A manifold for two touching convex shapes.",
+            "is_constructor": 1
+        },
+        "b2Pair": {
+            "name": "b2Pair",
+            "shortname": "b2Pair",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2Pair.js",
+            "line": 19,
+            "description": "The pair manager is used by the broad-phase to quickly add/remove/find pairs\nof overlapping proxies. It is based closely on code provided by Pierre Terdiman.\nhttp:",
+            "is_constructor": 1
+        },
+        "b2PairCallback": {
+            "name": "b2PairCallback",
+            "shortname": "b2PairCallback",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2PairCallback.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2PairManager": {
+            "name": "b2PairManager",
+            "shortname": "b2PairManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2PairManager.js",
+            "line": 19,
+            "description": "The pair manager is used by the broad-phase to quickly add/remove/find pairs\nof overlapping proxies. It is based closely on code provided by Pierre Terdiman.\nhttp:",
+            "is_constructor": 1
+        },
+        "b2Proxy": {
+            "name": "b2Proxy",
+            "shortname": "b2Proxy",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\collision\\b2Proxy.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2Mat22": {
+            "name": "b2Mat22",
+            "shortname": "b2Mat22",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\common\\math\\b2Mat22.js",
+            "line": 22,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "angle",
+                    "description": ""
+                },
+                {
+                    "name": "c1",
+                    "description": ""
+                },
+                {
+                    "name": "c2",
+                    "description": ""
+                }
+            ]
+        },
+        "b2Math": {
+            "name": "b2Math",
+            "shortname": "b2Math",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\common\\math\\b2Math.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2Vec2": {
+            "name": "b2Vec2",
+            "shortname": "b2Vec2",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\common\\math\\b2Vec2.js",
+            "line": 19,
+            "description": "b2Vec2 has no constructor so that it\ncan be placed in a union.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "x",
+                    "description": ""
+                },
+                {
+                    "name": "y",
+                    "description": ""
+                }
+            ]
+        },
+        "b2Settings": {
+            "name": "b2Settings",
+            "shortname": "b2Settings",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\common\\b2Settings.js",
+            "line": 19,
+            "is_constructor": 1
+        },
+        "b2CircleContact": {
+            "name": "b2CircleContact",
+            "shortname": "b2CircleContact",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2CircleContact.js",
+            "line": 21,
+            "is_constructor": 1
+        },
+        "b2Conservative": {
+            "name": "b2Conservative",
+            "shortname": "b2Conservative",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2Conservative.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2Contact": {
+            "name": "b2Contact",
+            "shortname": "b2Contact",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2Contact.js",
+            "line": 27,
+            "is_constructor": 1
+        },
+        "b2ContactConstraint": {
+            "name": "b2ContactConstraint",
+            "shortname": "b2ContactConstraint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraint.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2ContactConstraintPoint": {
+            "name": "b2ContactConstraintPoint",
+            "shortname": "b2ContactConstraintPoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactConstraintPoint.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2ContactNode": {
+            "name": "b2ContactNode",
+            "shortname": "b2ContactNode",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactNode.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2ContactRegister": {
+            "name": "b2ContactRegister",
+            "shortname": "b2ContactRegister",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactRegister.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2ContactSolver": {
+            "name": "b2ContactSolver",
+            "shortname": "b2ContactSolver",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2ContactSolver.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2NullContact": {
+            "name": "b2NullContact",
+            "shortname": "b2NullContact",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2NullContact.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2PolyAndCircleContact": {
+            "name": "b2PolyAndCircleContact",
+            "shortname": "b2PolyAndCircleContact",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2PolyAndCircleContact.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2PolyContact": {
+            "name": "b2PolyContact",
+            "shortname": "b2PolyContact",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\contacts\\b2PolyContact.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2DistanceJoint": {
+            "name": "b2DistanceJoint",
+            "shortname": "b2DistanceJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJoint.js",
+            "line": 19,
+            "description": "C = norm(p2 - p1) - L\nu = (p2 - p1) / norm(p2 - p1)\nCdot = dot(u, v2 + cross(w2, r2) - v1 - cross(w1, r1))\nJ = [-u -cross(r1, u) u cross(r2, u)]\nK = J * invM * JT\n  = invMass1 + invI1 * cross(r1, u)^2 + invMass2 + invI2 * cross(r2, u)^2",
+            "is_constructor": 1
+        },
+        "b2DistanceJointDef": {
+            "name": "b2DistanceJointDef",
+            "shortname": "b2DistanceJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2DistanceJointDef.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2GearJoint": {
+            "name": "b2GearJoint",
+            "shortname": "b2GearJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2GearJoint.js",
+            "line": 23,
+            "is_constructor": 1
+        },
+        "b2GearJointDef": {
+            "name": "b2GearJointDef",
+            "shortname": "b2GearJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2GearJointDef.js",
+            "line": 19,
+            "description": "A gear joint is used to connect two joints together. \n\nEither joint can be a revolute or prismatic joint. You specify a gear ratio\nto bind the motions together:\ncoordinate1 + ratio * coordinate2 = constant\n\nThe ratio can be negative or positive. If one joint is a revolute joint\nand the other joint is a prismatic joint, then the ratio will have units\nof length or units of 1/length.\n\nRESTRICITON: The revolute and prismatic joints must be attached to\na fixed body (which must be body1 on those joints).",
+            "is_constructor": 1
+        },
+        "b2Jacobian": {
+            "name": "b2Jacobian",
+            "shortname": "b2Jacobian",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2Jacobian.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2Joint": {
+            "name": "b2Joint",
+            "shortname": "b2Joint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2Joint.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2JointDef": {
+            "name": "b2JointDef",
+            "shortname": "b2JointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2JointDef.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2JointNode": {
+            "name": "b2JointNode",
+            "shortname": "b2JointNode",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2JointNode.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2MouseJoint": {
+            "name": "b2MouseJoint",
+            "shortname": "b2MouseJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2MouseJoint.js",
+            "line": 19,
+            "description": "p = attached point, m = mouse point\nC = p - m\nCdot = v\n     = v + cross(w, r)\nJ = [I r_skew]\nIdentity used:\nw k % (rx i + ry j) = w * (-ry i + rx j)",
+            "is_constructor": 1
+        },
+        "b2MouseJointDef": {
+            "name": "b2MouseJointDef",
+            "shortname": "b2MouseJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2MouseJointDef.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2PrismaticJoint": {
+            "name": "b2PrismaticJoint",
+            "shortname": "b2PrismaticJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJoint.js",
+            "line": 19,
+            "description": "Linear constraint (point-to-line)\n\nd = p2 - p1 = x2 + r2 - x1 - r1\nC = dot(ay1, d)\nCdot = dot(d, cross(w1, ay1)) + dot(ay1, v2 + cross(w2, r2) - v1 - cross(w1, r1))\n     = -dot(ay1, v1) - dot(cross(d + r1, ay1), w1) + dot(ay1, v2) + dot(cross(r2, ay1), v2)\nJ = [-ay1 -cross(d+r1,ay1) ay1 cross(r2,ay1)]\n\nAngular constraint\nC = a2 - a1 + a_initial\nCdot = w2 - w1\nJ = [0 0 -1 0 0 1]\n\nMotor/Limit linear constraint\nC = dot(ax1, d)\nCdot = = -dot(ax1, v1) - dot(cross(d + r1, ax1), w1) + dot(ax1, v2) + dot(cross(r2, ax1), v2)\nJ = [-ax1 -cross(d+r1,ax1) ax1 cross(r2,ax1)]",
+            "is_constructor": 1
+        },
+        "b2PrismaticJointDef": {
+            "name": "b2PrismaticJointDef",
+            "shortname": "b2PrismaticJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2PrismaticJointDef.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2PulleyJoint": {
+            "name": "b2PulleyJoint",
+            "shortname": "b2PulleyJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJoint.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2PulleyJointDef": {
+            "name": "b2PulleyJointDef",
+            "shortname": "b2PulleyJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2PulleyJointDef.js",
+            "line": 19,
+            "description": "The pulley joint is connected to two bodies and two fixed ground points.\n\nThe pulley supports a ratio such that:\nlength1 + ratio * length2 = constant\nYes, the force transmitted is scaled by the ratio.\nThe pulley also enforces a maximum length limit on both sides. This is\nuseful to prevent one side of the pulley hitting the top.",
+            "is_constructor": 1
+        },
+        "b2RevoluteJoint": {
+            "name": "b2RevoluteJoint",
+            "shortname": "b2RevoluteJoint",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJoint.js",
+            "line": 19,
+            "description": "Point-to-point constraint\n\nC = p2 - p1\nCdot = v2 - v1\n     = v2 + cross(w2, r2) - v1 - cross(w1, r1)\nJ = [-I -r1_skew I r2_skew ]\nIdentity used:\nw k % (rx i + ry j) = w * (-ry i + rx j)\n\nMotor constraint\nCdot = w2 - w1\nJ = [0 0 -1 0 0 1]\nK = invI1 + invI2",
+            "is_constructor": 1
+        },
+        "b2RevoluteJointDef": {
+            "name": "b2RevoluteJointDef",
+            "shortname": "b2RevoluteJointDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\joints\\b2RevoluteJointDef.js",
+            "line": 23,
+            "is_constructor": 1
+        },
+        "b2Body": {
+            "name": "b2Body",
+            "shortname": "b2Body",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2Body.js",
+            "line": 19,
+            "description": "A rigid body. Internal computation are done in terms\nof the center of mass position. The center of mass may\nbe offset from the body's origin.",
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "bd",
+                    "description": ""
+                },
+                {
+                    "name": "world",
+                    "description": ""
+                }
+            ]
+        },
+        "b2BodyDef": {
+            "name": "b2BodyDef",
+            "shortname": "b2BodyDef",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2BodyDef.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2CollisionFilter": {
+            "name": "b2CollisionFilter",
+            "shortname": "b2CollisionFilter",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2CollisionFilter.js",
+            "line": 24,
+            "is_constructor": 1
+        },
+        "b2ContactManager": {
+            "name": "b2ContactManager",
+            "shortname": "b2ContactManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2ContactManager.js",
+            "line": 22,
+            "is_constructor": 1
+        },
+        "b2Island": {
+            "name": "b2Island",
+            "shortname": "b2Island",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2Island.js",
+            "line": 102,
+            "is_constructor": 1
+        },
+        "b2TimeStep": {
+            "name": "b2TimeStep",
+            "shortname": "b2TimeStep",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2TimeStep.js",
+            "line": 20,
+            "is_constructor": 1
+        },
+        "b2World": {
+            "name": "b2World",
+            "shortname": "b2World",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 23,
+            "is_constructor": 1,
+            "params": [
+                {
+                    "name": "worldAABB",
+                    "description": "axis aligned bounding box",
+                    "type": "B2AABB"
+                },
+                {
+                    "name": "gravity",
+                    "description": "gravity force vector",
+                    "type": "B2Vec2"
+                },
+                {
+                    "name": "doSleep",
+                    "description": "bodies can sleep",
+                    "type": "Boolean"
+                }
+            ]
+        },
+        "b2WorldListener": {
+            "name": "b2WorldListener",
+            "shortname": "b2WorldListener",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\fork\\box2d\\dynamics\\b2WorldListener.js",
+            "line": 24,
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 67,
+            "itemtype": "method",
+            "name": "SetListener",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 76,
+            "itemtype": "method",
+            "name": "SetFilter",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 86,
+            "itemtype": "method",
+            "name": "CreateBody",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 105,
+            "itemtype": "method",
+            "name": "DestroyBody",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 144,
+            "itemtype": "method",
+            "name": "CleanBodyList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 185,
+            "itemtype": "method",
+            "name": "CreateJoint",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 229,
+            "itemtype": "method",
+            "name": "DestroyJoint",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 318,
+            "itemtype": "method",
+            "name": "GetGroundBody",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 328,
+            "itemtype": "method",
+            "name": "Step",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 499,
+            "itemtype": "method",
+            "name": "Query",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 518,
+            "itemtype": "method",
+            "name": "GetBodyList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 524,
+            "itemtype": "method",
+            "name": "GetJointList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 530,
+            "itemtype": "method",
+            "name": "GetContactList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 537,
+            "itemtype": "method",
+            "name": "QueryPoint",
+            "params": [
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "point",
+                    "description": "",
+                    "type": "B2Vec2"
+                }
+            ],
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 553,
+            "itemtype": "method",
+            "name": "DebugDraw",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 568,
+            "itemtype": "method",
+            "name": "SetDebugDraw",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 667,
+            "itemtype": "property",
+            "name": "m_bodyList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 671,
+            "itemtype": "property",
+            "name": "m_contactList",
+            "class": "b2World"
+        },
+        {
+            "file": "src\\fork\\box2d\\dynamics\\b2World.js",
+            "line": 675,
+            "itemtype": "property",
+            "name": "m_jointList",
+            "class": "b2World"
+        }
+    ],
+    "warnings": []
+}

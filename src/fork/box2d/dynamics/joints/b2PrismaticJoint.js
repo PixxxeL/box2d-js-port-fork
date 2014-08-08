@@ -16,28 +16,28 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// Linear constraint (point-to-line)
-// d = p2 - p1 = x2 + r2 - x1 - r1
-// C = dot(ay1, d)
-// Cdot = dot(d, cross(w1, ay1)) + dot(ay1, v2 + cross(w2, r2) - v1 - cross(w1, r1))
-//      = -dot(ay1, v1) - dot(cross(d + r1, ay1), w1) + dot(ay1, v2) + dot(cross(r2, ay1), v2)
-// J = [-ay1 -cross(d+r1,ay1) ay1 cross(r2,ay1)]
-//
-// Angular constraint
-// C = a2 - a1 + a_initial
-// Cdot = w2 - w1
-// J = [0 0 -1 0 0 1]
-
-// Motor/Limit linear constraint
-// C = dot(ax1, d)
-// Cdot = = -dot(ax1, v1) - dot(cross(d + r1, ax1), w1) + dot(ax1, v2) + dot(cross(r2, ax1), v2)
-// J = [-ax1 -cross(d+r1,ax1) ax1 cross(r2,ax1)]
-
-
+/**
+ * Linear constraint (point-to-line)
+ * 
+ * d = p2 - p1 = x2 + r2 - x1 - r1
+ * C = dot(ay1, d)
+ * Cdot = dot(d, cross(w1, ay1)) + dot(ay1, v2 + cross(w2, r2) - v1 - cross(w1, r1))
+ *      = -dot(ay1, v1) - dot(cross(d + r1, ay1), w1) + dot(ay1, v2) + dot(cross(r2, ay1), v2)
+ * J = [-ay1 -cross(d+r1,ay1) ay1 cross(r2,ay1)]
+ * 
+ * Angular constraint
+ * C = a2 - a1 + a_initial
+ * Cdot = w2 - w1
+ * J = [0 0 -1 0 0 1]
+ * 
+ * Motor/Limit linear constraint
+ * C = dot(ax1, d)
+ * Cdot = = -dot(ax1, v1) - dot(cross(d + r1, ax1), w1) + dot(ax1, v2) + dot(cross(r2, ax1), v2)
+ * J = [-ax1 -cross(d+r1,ax1) ax1 cross(r2,ax1)]
+ * 
+ * @class b2PrismaticJoint
+ * @constructor
+ */
 var b2PrismaticJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references

@@ -16,9 +16,10 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * @class b2AABB
+ * @constructor
+ */
 var b2AABB = function () {
     // initialize instance variables for references
 	this.minVertex = new b2Vec2();

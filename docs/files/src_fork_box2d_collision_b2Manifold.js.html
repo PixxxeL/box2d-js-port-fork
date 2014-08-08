@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>src\fork\box2d\collision\b2Manifold.js - Box2D Port Fork API</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+
+<div id="doc">
+    <div id="hd" class="yui3-g header">
+        <div class="yui3-u-3-4">
+            
+                <h1><img src="../assets/css/logo.png" title="Box2D Port Fork API"></h1>
+            
+        </div>
+        <div class="yui3-u-1-4 version">
+            <em>API Docs for: 1.0.0</em>
+        </div>
+    </div>
+    <div id="bd" class="yui3-g">
+
+        <div class="yui3-u-1-4">
+            <div id="docs-sidebar" class="sidebar apidocs">
+                <div id="api-list">
+    <h2 class="off-left">APIs</h2>
+    <div id="api-tabview" class="tabview">
+        <ul class="tabs">
+            <li><a href="#api-classes">Classes</a></li>
+            <li><a href="#api-modules">Modules</a></li>
+        </ul>
+
+        <div id="api-tabview-filter">
+            <input type="search" id="api-filter" placeholder="Type to filter APIs">
+        </div>
+
+        <div id="api-tabview-panel">
+            <ul id="api-classes" class="apis classes">
+            
+                <li><a href="../classes/b2AABB.html">b2AABB</a></li>
+            
+                <li><a href="../classes/b2Body.html">b2Body</a></li>
+            
+                <li><a href="../classes/b2BodyDef.html">b2BodyDef</a></li>
+            
+                <li><a href="../classes/b2Bound.html">b2Bound</a></li>
+            
+                <li><a href="../classes/b2BoundValues.html">b2BoundValues</a></li>
+            
+                <li><a href="../classes/b2BoxDef.html">b2BoxDef</a></li>
+            
+                <li><a href="../classes/b2BufferedPair.html">b2BufferedPair</a></li>
+            
+                <li><a href="../classes/b2CircleContact.html">b2CircleContact</a></li>
+            
+                <li><a href="../classes/b2CircleDef.html">b2CircleDef</a></li>
+            
+                <li><a href="../classes/b2CircleShape.html">b2CircleShape</a></li>
+            
+                <li><a href="../classes/b2Collision.html">b2Collision</a></li>
+            
+                <li><a href="../classes/b2CollisionFilter.html">b2CollisionFilter</a></li>
+            
+                <li><a href="../classes/b2Conservative.html">b2Conservative</a></li>
+            
+                <li><a href="../classes/b2Contact.html">b2Contact</a></li>
+            
+                <li><a href="../classes/b2ContactConstraint.html">b2ContactConstraint</a></li>
+            
+                <li><a href="../classes/b2ContactConstraintPoint.html">b2ContactConstraintPoint</a></li>
+            
+                <li><a href="../classes/b2ContactID.html">b2ContactID</a></li>
+            
+                <li><a href="../classes/b2ContactManager.html">b2ContactManager</a></li>
+            
+                <li><a href="../classes/b2ContactNode.html">b2ContactNode</a></li>
+            
+                <li><a href="../classes/b2ContactPoint.html">b2ContactPoint</a></li>
+            
+                <li><a href="../classes/b2ContactRegister.html">b2ContactRegister</a></li>
+            
+                <li><a href="../classes/b2ContactSolver.html">b2ContactSolver</a></li>
+            
+                <li><a href="../classes/b2Distance.html">b2Distance</a></li>
+            
+                <li><a href="../classes/b2DistanceJoint.html">b2DistanceJoint</a></li>
+            
+                <li><a href="../classes/b2DistanceJointDef.html">b2DistanceJointDef</a></li>
+            
+                <li><a href="../classes/b2GearJoint.html">b2GearJoint</a></li>
+            
+                <li><a href="../classes/b2GearJointDef.html">b2GearJointDef</a></li>
+            
+                <li><a href="../classes/b2Island.html">b2Island</a></li>
+            
+                <li><a href="../classes/b2Jacobian.html">b2Jacobian</a></li>
+            
+                <li><a href="../classes/b2Joint.html">b2Joint</a></li>
+            
+                <li><a href="../classes/b2JointDef.html">b2JointDef</a></li>
+            
+                <li><a href="../classes/b2JointNode.html">b2JointNode</a></li>
+            
+                <li><a href="../classes/b2Manifold.html">b2Manifold</a></li>
+            
+                <li><a href="../classes/b2MassData.html">b2MassData</a></li>
+            
+                <li><a href="../classes/b2Mat22.html">b2Mat22</a></li>
+            
+                <li><a href="../classes/b2Math.html">b2Math</a></li>
+            
+                <li><a href="../classes/b2MouseJoint.html">b2MouseJoint</a></li>
+            
+                <li><a href="../classes/b2MouseJointDef.html">b2MouseJointDef</a></li>
+            
+                <li><a href="../classes/b2NullContact.html">b2NullContact</a></li>
+            
+                <li><a href="../classes/b2OBB.html">b2OBB</a></li>
+            
+                <li><a href="../classes/b2Pair.html">b2Pair</a></li>
+            
+                <li><a href="../classes/b2PairCallback.html">b2PairCallback</a></li>
+            
+                <li><a href="../classes/b2PairManager.html">b2PairManager</a></li>
+            
+                <li><a href="../classes/b2PolyAndCircleContact.html">b2PolyAndCircleContact</a></li>
+            
+                <li><a href="../classes/b2PolyContact.html">b2PolyContact</a></li>
+            
+                <li><a href="../classes/b2PolyDef.html">b2PolyDef</a></li>
+            
+                <li><a href="../classes/b2PolyShape.html">b2PolyShape</a></li>
+            
+                <li><a href="../classes/b2PrismaticJoint.html">b2PrismaticJoint</a></li>
+            
+                <li><a href="../classes/b2PrismaticJointDef.html">b2PrismaticJointDef</a></li>
+            
+                <li><a href="../classes/b2Proxy.html">b2Proxy</a></li>
+            
+                <li><a href="../classes/b2PulleyJoint.html">b2PulleyJoint</a></li>
+            
+                <li><a href="../classes/b2PulleyJointDef.html">b2PulleyJointDef</a></li>
+            
+                <li><a href="../classes/b2RevoluteJoint.html">b2RevoluteJoint</a></li>
+            
+                <li><a href="../classes/b2RevoluteJointDef.html">b2RevoluteJointDef</a></li>
+            
+                <li><a href="../classes/b2Settings.html">b2Settings</a></li>
+            
+                <li><a href="../classes/b2Shape.html">b2Shape</a></li>
+            
+                <li><a href="../classes/b2ShapeDef.html">b2ShapeDef</a></li>
+            
+                <li><a href="../classes/b2TimeStep.html">b2TimeStep</a></li>
+            
+                <li><a href="../classes/b2Vec2.html">b2Vec2</a></li>
+            
+                <li><a href="../classes/b2World.html">b2World</a></li>
+            
+                <li><a href="../classes/b2WorldListener.html">b2WorldListener</a></li>
+            
+                <li><a href="../classes/ClipVertex.html">ClipVertex</a></li>
+            
+                <li><a href="../classes/Features.html">Features</a></li>
+            
+            </ul>
+
+            <ul id="api-modules" class="apis modules">
+            
+            </ul>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+        <div class="yui3-u-3-4">
+                <div id="api-options">
+        Show:
+        <label for="api-show-inherited">
+            <input type="checkbox" id="api-show-inherited" checked>
+            Inherited
+        </label>
+
+        <label for="api-show-protected">
+            <input type="checkbox" id="api-show-protected">
+            Protected
+        </label>
+
+        <label for="api-show-private">
+            <input type="checkbox" id="api-show-private">
+            Private
+        </label>
+        <label for="api-show-deprecated">
+            <input type="checkbox" id="api-show-deprecated">
+            Deprecated
+        </label>
+
+    </div>
+
+
+            <div class="apidocs">
+                <div id="docs-main">
+                    <div class="content">
+                        <h1 class="file-heading">File: src\fork\box2d\collision\b2Manifold.js</h1>
+
+<div class="file">
+    <pre class="code prettyprint linenums">
+﻿/*
+* Copyright (c) 2006-2007 Erin Catto http:
+*
+* This software is provided &#x27;as-is&#x27;, without any express or implied
+* warranty.  In no event will the authors be held liable for any damages
+* arising from the use of this software.
+* Permission is granted to anyone to use this software for any purpose,
+* including commercial applications, and to alter it and redistribute it
+* freely, subject to the following restrictions:
+* 1. The origin of this software must not be misrepresented; you must not
+* claim that you wrote the original software. If you use this software
+* in a product, an acknowledgment in the product documentation would be
+* appreciated but is not required.
+* 2. Altered source versions must be plainly marked, and must not be
+* misrepresented the original software.
+* 3. This notice may not be removed or altered from any source distribution.
+*/
+
+/**
+ * A manifold for two touching convex shapes.
+ * 
+ * @class b2Manifold
+ * @constructor
+ */
+var b2Manifold = function () {
+    this.points = new Array(b2Settings.b2_maxManifoldPoints);
+	for (var i = 0; i &lt; b2Settings.b2_maxManifoldPoints; i++){
+		this.points[i] = new b2ContactPoint();
+	}
+	this.normal = new b2Vec2();
+};
+b2Manifold.prototype = 
+{
+	points: null,
+	normal: null,
+	pointCount: 0
+};
+
+    </pre>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script>prettyPrint();</script>
+<script src="../assets/js/yui-prettify.js"></script>
+<script src="../assets/../api.js"></script>
+<script src="../assets/js/api-filter.js"></script>
+<script src="../assets/js/api-list.js"></script>
+<script src="../assets/js/api-search.js"></script>
+<script src="../assets/js/apidocs.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+    "name": "Box2D Port Fork API",
+    "description": "Fork of port (from Flash to js) of Box2D Physics Engine for Javascript",
+    "version": "1.0.0",
+    "options": {
+        "outdir": "./docs",
+        "paths": [
+            "./src/fork/box2d"
+        ],
+        "tabtospace": "true"
+    }
+}

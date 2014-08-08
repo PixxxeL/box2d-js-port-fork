@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2Proxy
+ * @constructor
+ */
 var b2Proxy = function () {
     // initialize instance variables for references
 	this.lowerBounds = [/*uint*/(0), /*uint*/(0)];

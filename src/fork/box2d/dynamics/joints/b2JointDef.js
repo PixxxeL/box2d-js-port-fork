@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2JointDef
+ * @constructor
+ */
 var b2JointDef = function () {
 	this.type = b2Joint.e_unknownJoint;
 	this.userData = null;

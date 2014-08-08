@@ -16,9 +16,12 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * A manifold for two touching convex shapes.
+ * 
+ * @class b2Manifold
+ * @constructor
+ */
 var b2Manifold = function () {
     this.points = new Array(b2Settings.b2_maxManifoldPoints);
 	for (var i = 0; i < b2Settings.b2_maxManifoldPoints; i++){

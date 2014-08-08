@@ -16,23 +16,24 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// Point-to-point constraint
-// C = p2 - p1
-// Cdot = v2 - v1
-//      = v2 + cross(w2, r2) - v1 - cross(w1, r1)
-// J = [-I -r1_skew I r2_skew ]
-// Identity used:
-// w k % (rx i + ry j) = w * (-ry i + rx j)
-
-// Motor constraint
-// Cdot = w2 - w1
-// J = [0 0 -1 0 0 1]
-// K = invI1 + invI2
-
+/**
+ * Point-to-point constraint
+ *
+ * C = p2 - p1
+ * Cdot = v2 - v1
+ *      = v2 + cross(w2, r2) - v1 - cross(w1, r1)
+ * J = [-I -r1_skew I r2_skew ]
+ * Identity used:
+ * w k % (rx i + ry j) = w * (-ry i + rx j)
+ * 
+ * Motor constraint
+ * Cdot = w2 - w1
+ * J = [0 0 -1 0 0 1]
+ * K = invI1 + invI2
+ *
+ * @class b2RevoluteJoint
+ * @constructor
+ */
 var b2RevoluteJoint = function (def) {
 	// The constructor for b2Joint
 	// initialize instance variables for references

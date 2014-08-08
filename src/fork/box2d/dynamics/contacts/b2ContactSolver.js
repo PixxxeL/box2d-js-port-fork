@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2ContactSolver
+ * @constructor
+ */
 var b2ContactSolver = function (contacts, contactCount, allocator) {
     // initialize instance variables for references
 	this.m_constraints = new Array();

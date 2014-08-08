@@ -16,15 +16,17 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// C = norm(p2 - p1) - L
-// u = (p2 - p1) / norm(p2 - p1)
-// Cdot = dot(u, v2 + cross(w2, r2) - v1 - cross(w1, r1))
-// J = [-u -cross(r1, u) u cross(r2, u)]
-// K = J * invM * JT
-//   = invMass1 + invI1 * cross(r1, u)^2 + invMass2 + invI2 * cross(r2, u)^2
-
+/**
+ * C = norm(p2 - p1) - L
+ * u = (p2 - p1) / norm(p2 - p1)
+ * Cdot = dot(u, v2 + cross(w2, r2) - v1 - cross(w1, r1))
+ * J = [-u -cross(r1, u) u cross(r2, u)]
+ * K = J * invM * JT
+ *   = invMass1 + invI1 * cross(r1, u)^2 + invMass2 + invI2 * cross(r2, u)^2
+ * 
+ * @class b2DistanceJoint
+ * @constructor
+ */
 var b2DistanceJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references

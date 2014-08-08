@@ -99,7 +99,10 @@ probably default to the slower Full NGS and let the user select the faster
 Baumgarte method in performance critical scenarios.
 */
 
-
+/**
+ * @class b2Island
+ * @constructor
+ */
 var b2Island = function (bodyCapacity, contactCapacity, jointCapacity, allocator) {
 	var i = 0;
 

@@ -16,7 +16,10 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
+/**
+ * @class b2Settings
+ * @constructor
+ */
 var b2Settings = function () {};
 b2Settings.prototype = {
 

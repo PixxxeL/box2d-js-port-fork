@@ -18,7 +18,10 @@
 
 
 
-
+/**
+ * @class b2Collision
+ * @constructor
+ */
 var b2Collision = function () {
     //
 };

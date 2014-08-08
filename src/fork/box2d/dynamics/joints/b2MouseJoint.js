@@ -16,18 +16,18 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// p = attached point, m = mouse point
-// C = p - m
-// Cdot = v
-//      = v + cross(w, r)
-// J = [I r_skew]
-// Identity used:
-// w k % (rx i + ry j) = w * (-ry i + rx j)
-
+/**
+ * p = attached point, m = mouse point
+ * C = p - m
+ * Cdot = v
+ *      = v + cross(w, r)
+ * J = [I r_skew]
+ * Identity used:
+ * w k % (rx i + ry j) = w * (-ry i + rx j)
+ * 
+ * @class b2MouseJoint
+ * @constructor
+ */
 var b2MouseJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references

@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2JointNode
+ * @constructor
+ */
 var b2JointNode = function () {
     //
 };

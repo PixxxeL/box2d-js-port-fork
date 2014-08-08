@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2TimeStep
+ * @constructor
+ */
 var b2TimeStep = function () {};
 b2TimeStep.prototype = 
 {

@@ -19,7 +19,10 @@
 
 
 
-
+/**
+ * @class b2MouseJointDef
+ * @constructor
+ */
 var b2MouseJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;

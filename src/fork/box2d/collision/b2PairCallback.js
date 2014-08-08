@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2PairCallback
+ * @constructor
+ */
 var b2PairCallback = function () {};
 b2PairCallback.prototype = 
 {

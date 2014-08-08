@@ -20,7 +20,13 @@
 
 
 
-
+/**
+ * @class b2World
+ * @constructor
+ * @param worldAABB {b2AABB} axis aligned bounding box
+ * @param gravity {b2Vec2} gravity force vector
+ * @param doSleep {Boolean} bodies can sleep
+ */
 var b2World = function (worldAABB, gravity, doSleep) {
 	this.step = new b2TimeStep();
 	this.m_contactManager = new b2ContactManager();
@@ -58,12 +64,18 @@ b2World.prototype =
 
 	// Set a callback to notify you when a joint is implicitly destroyed
 	// when an attached body is destroyed.
+	/**
+	 * @method SetListener
+	 */
 	SetListener: function(listener){
 		this.m_listener = listener;
 	},
 
 	// Register a collision filter to provide specific control over collision.
 	// Otherwise the default filter is used (b2CollisionFilter).
+	/**
+	 * @method SetFilter
+	 */
 	SetFilter: function(filter){
 		this.m_filter = filter;
 	},
@@ -71,6 +83,9 @@ b2World.prototype =
 	// Create and destroy rigid bodies. Destruction is deferred until the
 	// the next call to this.Step. This is done so that bodies may be destroyed
 	// while you iterate through the contact list.
+	/**
+	 * @method CreateBody
+	 */
 	CreateBody: function(def){
 		//void* mem = this.m_blockAllocator.Allocate(sizeof(b2Body));
 		var b = new b2Body(def, this);
@@ -87,6 +102,9 @@ b2World.prototype =
 		return b;
 	},
 	// Body destruction is deferred to make contact processing more robust.
+	/**
+	 * @method DestroyBody
+	 */
 	DestroyBody: function(b)
 	{
 
@@ -123,6 +141,9 @@ b2World.prototype =
 		this.m_bodyDestroyList = b;
 	},
 
+	/**
+	 * @method CleanBodyList
+	 */
 	CleanBodyList: function()
 	{
 		this.m_contactManager.m_destroyImmediate = true;
@@ -161,6 +182,9 @@ b2World.prototype =
 		this.m_contactManager.m_destroyImmediate = false;
 	},
 
+	/**
+	 * @method CreateJoint
+	 */
 	CreateJoint: function(def){
 		var j = b2Joint.Create(def, this.m_blockAllocator);
 
@@ -202,6 +226,9 @@ b2World.prototype =
 
 		return j;
 	},
+	/**
+	 * @method DestroyJoint
+	 */
 	DestroyJoint: function(j)
 	{
 
@@ -288,6 +315,9 @@ b2World.prototype =
 
 	// The world provides a single ground body with no collision shapes. You
 	// can use this to simplify the creation of joints.
+	/**
+	 * @method GetGroundBody
+	 */
 	GetGroundBody: function(){
 		return this.m_groundBody;
 	},
@@ -295,6 +325,9 @@ b2World.prototype =
 
 	step: new b2TimeStep(),
 	// this.Step
+	/**
+	 * @method Step
+	 */
 	Step: function(dt, iterations){
 
 		var b;
@@ -463,6 +496,9 @@ b2World.prototype =
 	// this.Query the world for all shapes that potentially overlap the
 	// provided AABB. You provide a shape pointer buffer of specified
 	// size. The number of shapes found is returned.
+	/**
+	 * @method Query
+	 */
 	Query: function(aabb, shapes, maxCount){
 
 		//void** results = (void**)this.m_stackAllocator.Allocate(maxCount * sizeof(void*));
@@ -479,16 +515,30 @@ b2World.prototype =
 	},
 
 	// You can use these to iterate over all the bodies, joints, and contacts.
+	/**
+	 * @method GetBodyList
+	 */
 	GetBodyList: function(){
 		return this.m_bodyList;
 	},
+	/**
+	 * @method GetJointList
+	 */
 	GetJointList: function(){
 		return this.m_jointList;
 	},
+	/**
+	 * @method GetContactList
+	 */
 	GetContactList: function(){
 		return this.m_contactList;
 	},
 
+	/**
+	 * @method QueryPoint
+	 * @param callback {Function}
+	 * @param point {b2Vec2}
+	 */
 	QueryPoint = function (callback, point) {
 	    var body, shape;
 	    for (body = this.m_bodyList; body; body = body.m_next) {
@@ -500,6 +550,9 @@ b2World.prototype =
 	    }
 	},
 
+	/**
+	 * @method DebugDraw
+	 */
 	DebugDraw : function () {
 	    var item, shape;
 	    this.ctx.clearRect(0, 0, this.ctx.width, this.ctx.height);
@@ -512,6 +565,9 @@ b2World.prototype =
 	        }
 	    }
 	},
+	/**
+	 * @method SetDebugDraw
+	 */
 	SetDebugDraw : function (params) {
 	    params = params || {};
 	    this.ctx = params.ctx; 
@@ -608,9 +664,17 @@ b2World.prototype =
 
 	m_broadPhase: null,
 	m_contactManager: new b2ContactManager(),
-
+	/**
+	 * @property m_bodyList
+	 */
 	m_bodyList: null,
+	/**
+	 * @property m_contactList
+	 */
 	m_contactList: null,
+	/**
+	 * @property m_jointList
+	 */
 	m_jointList: null,
 
 	m_bodyCount: 0,

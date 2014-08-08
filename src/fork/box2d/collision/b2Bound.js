@@ -17,7 +17,10 @@
 */
 
 
-
+/**
+ * @class b2Bound
+ * @constructor
+ */
 var b2Bound = function () {
     //
 };
