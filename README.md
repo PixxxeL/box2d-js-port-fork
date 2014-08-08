@@ -19,5 +19,5 @@ List of changes:
   * Add `DebugDraw` method of b2World class. This method call every frame
     for draw shapes and joints on canvas element. For install it
     set `SetDebugDraw` where pass 2d-context, width and height of canvas-2d.
-  * Add `QueryPoint` method for hit test point over shape. In original port
-    there is no.
+  * Add `QueryPoint` method of b2World class for hit test point over shape.
+    There is no in original port.
