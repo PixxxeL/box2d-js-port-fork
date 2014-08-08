@@ -489,6 +489,17 @@ b2World.prototype =
 		return this.m_contactList;
 	},
 
+	QueryPoint = function (callback, point) {
+	    var body, shape;
+	    for (body = this.m_bodyList; body; body = body.m_next) {
+	        for (shape = body.GetShapeList(); shape != null; shape = shape.GetNext()) {
+	            if (shape.TestPoint(point)) {
+	                callback(body);
+	            }
+	        }
+	    }
+	},
+
 	DebugDraw : function () {
 	    var item, shape;
 	    this.ctx.clearRect(0, 0, this.ctx.width, this.ctx.height);
