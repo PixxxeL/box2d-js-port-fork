@@ -22,22 +22,20 @@
 
 
 
-var b2ShapeDef = Class.create();
+var b2ShapeDef = function () {
+    this.type = b2Shape.e_unknownShape;
+	this.userData = null;
+	this.localPosition = new b2Vec2(0.0, 0.0);
+	this.localRotation = 0.0;
+	this.friction = 0.2;
+	this.restitution = 0.0;
+	this.density = 0.0;
+	this.categoryBits = 0x0001;
+	this.maskBits = 0xFFFF;
+	this.groupIndex = 0;
+};
 b2ShapeDef.prototype = 
 {
-	initialize: function()
-	{
-		this.type = b2Shape.e_unknownShape;
-		this.userData = null;
-		this.localPosition = new b2Vec2(0.0, 0.0);
-		this.localRotation = 0.0;
-		this.friction = 0.2;
-		this.restitution = 0.0;
-		this.density = 0.0;
-		this.categoryBits = 0x0001;
-		this.maskBits = 0xFFFF;
-		this.groupIndex = 0;
-	},
 
 	//virtual ~b2ShapeDef() {}
 
@@ -106,4 +104,5 @@ b2ShapeDef.prototype =
 	// Collision groups allow a certain group of objects to never collide (negative)
 	// or always collide (positive). Zero means no collision group. Non-zero group
 	// filtering always wins against the mask bits.
-	groupIndex: 0};
+	groupIndex: 0
+};

@@ -22,7 +22,71 @@
 
 
 
-var b2CircleShape = Class.create();
+var b2CircleShape = function (def, body, localCenter) {
+    // initialize instance variables for references
+	this.m_R = new b2Mat22();
+	this.m_position = new b2Vec2();
+	//
+
+	// The constructor for b2Shape
+	this.m_userData = def.userData;
+
+	this.m_friction = def.friction;
+	this.m_restitution = def.restitution;
+	this.m_body = body;
+
+	this.m_proxyId = b2Pair.b2_nullProxy;
+
+	this.m_maxRadius = 0.0;
+
+	this.m_categoryBits = def.categoryBits;
+	this.m_maskBits = def.maskBits;
+	this.m_groupIndex = def.groupIndex;
+	//
+
+	// initialize instance variables for references
+	this.m_localPosition = new b2Vec2();
+	//
+
+	//super(def, body);
+
+	//b2Settings.b2Assert(def.type == b2Shape.e_circleShape);
+	var circle = def;
+
+	//this.m_localPosition = def.localPosition - localCenter;
+	this.m_localPosition.Set(def.localPosition.x - localCenter.x, def.localPosition.y - localCenter.y);
+	this.m_type = b2Shape.e_circleShape;
+	this.m_radius = circle.radius;
+
+	this.m_R.SetM(this.m_body.m_R);
+	//b2Vec2 r = b2Mul(this.m_body->this.m_R, this.m_localPosition);
+	var rX = this.m_R.col1.x * this.m_localPosition.x + this.m_R.col2.x * this.m_localPosition.y;
+	var rY = this.m_R.col1.y * this.m_localPosition.x + this.m_R.col2.y * this.m_localPosition.y;
+	//this.m_position = this.m_body->this.m_position + r;
+	this.m_position.x = this.m_body.m_position.x + rX;
+	this.m_position.y = this.m_body.m_position.y + rY;
+	//this.m_maxRadius = r.Length() + this.m_radius;
+	this.m_maxRadius = Math.sqrt(rX*rX+rY*rY) + this.m_radius;
+
+	var aabb = new b2AABB();
+	aabb.minVertex.Set(this.m_position.x - this.m_radius, this.m_position.y - this.m_radius);
+	aabb.maxVertex.Set(this.m_position.x + this.m_radius, this.m_position.y + this.m_radius);
+
+	var broadPhase = this.m_body.m_world.m_broadPhase;
+	if (broadPhase.InRange(aabb))
+	{
+		this.m_proxyId = broadPhase.CreateProxy(aabb, this);
+	}
+	else
+	{
+		this.m_proxyId = b2Pair.b2_nullProxy;
+	}
+
+	if (this.m_proxyId == b2Pair.b2_nullProxy)
+	{
+		this.m_body.Freeze();
+	}
+};
 Object.extend(b2CircleShape.prototype, b2Shape.prototype);
 Object.extend(b2CircleShape.prototype, 
 {
@@ -35,72 +99,6 @@ Object.extend(b2CircleShape.prototype,
 	},
 
 	//--------------- Internals Below -------------------
-
-	initialize: function(def, body, localCenter){
-		// initialize instance variables for references
-		this.m_R = new b2Mat22();
-		this.m_position = new b2Vec2();
-		//
-
-		// The constructor for b2Shape
-		this.m_userData = def.userData;
-
-		this.m_friction = def.friction;
-		this.m_restitution = def.restitution;
-		this.m_body = body;
-
-		this.m_proxyId = b2Pair.b2_nullProxy;
-
-		this.m_maxRadius = 0.0;
-
-		this.m_categoryBits = def.categoryBits;
-		this.m_maskBits = def.maskBits;
-		this.m_groupIndex = def.groupIndex;
-		//
-
-		// initialize instance variables for references
-		this.m_localPosition = new b2Vec2();
-		//
-
-		//super(def, body);
-
-		//b2Settings.b2Assert(def.type == b2Shape.e_circleShape);
-		var circle = def;
-
-		//this.m_localPosition = def.localPosition - localCenter;
-		this.m_localPosition.Set(def.localPosition.x - localCenter.x, def.localPosition.y - localCenter.y);
-		this.m_type = b2Shape.e_circleShape;
-		this.m_radius = circle.radius;
-
-		this.m_R.SetM(this.m_body.m_R);
-		//b2Vec2 r = b2Mul(this.m_body->this.m_R, this.m_localPosition);
-		var rX = this.m_R.col1.x * this.m_localPosition.x + this.m_R.col2.x * this.m_localPosition.y;
-		var rY = this.m_R.col1.y * this.m_localPosition.x + this.m_R.col2.y * this.m_localPosition.y;
-		//this.m_position = this.m_body->this.m_position + r;
-		this.m_position.x = this.m_body.m_position.x + rX;
-		this.m_position.y = this.m_body.m_position.y + rY;
-		//this.m_maxRadius = r.Length() + this.m_radius;
-		this.m_maxRadius = Math.sqrt(rX*rX+rY*rY) + this.m_radius;
-
-		var aabb = new b2AABB();
-		aabb.minVertex.Set(this.m_position.x - this.m_radius, this.m_position.y - this.m_radius);
-		aabb.maxVertex.Set(this.m_position.x + this.m_radius, this.m_position.y + this.m_radius);
-
-		var broadPhase = this.m_body.m_world.m_broadPhase;
-		if (broadPhase.InRange(aabb))
-		{
-			this.m_proxyId = broadPhase.CreateProxy(aabb, this);
-		}
-		else
-		{
-			this.m_proxyId = b2Pair.b2_nullProxy;
-		}
-
-		if (this.m_proxyId == b2Pair.b2_nullProxy)
-		{
-			this.m_body.Freeze();
-		}
-	},
 
 	Synchronize: function(position1, R1, position2, R2){
 		this.m_R.SetM(R2);

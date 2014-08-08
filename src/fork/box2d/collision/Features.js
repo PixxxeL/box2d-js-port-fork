@@ -18,7 +18,9 @@
 
 
 // We use contact ids to facilitate warm starting.
-var Features = Class.create();
+var Features = function () {
+    //
+};
 Features.prototype = 
 {
 	//
@@ -57,5 +59,5 @@ Features.prototype =
 		return this._flip;
 	},
 	_flip: 0,
-	_m_id: null,
-	initialize: function() {}};
+	_m_id: null
+};

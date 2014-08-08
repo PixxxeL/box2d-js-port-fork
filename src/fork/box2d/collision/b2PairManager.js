@@ -24,41 +24,41 @@
 
 
 
-var b2PairManager = Class.create();
+var b2PairManager = function () {
+    var i = 0;
+	//b2Settings.b2Assert(b2Math.b2IsPowerOfTwo(b2Pair.b2_tableCapacity) == true);
+	//b2Settings.b2Assert(b2Pair.b2_tableCapacity >= b2Settings.b2_maxPairs);
+	this.m_hashTable = new Array(b2Pair.b2_tableCapacity);
+	for (i = 0; i < b2Pair.b2_tableCapacity; ++i)
+	{
+		this.m_hashTable[i] = b2Pair.b2_nullPair;
+	}
+	this.m_pairs = new Array(b2Settings.b2_maxPairs);
+	for (i = 0; i < b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairs[i] = new b2Pair();
+	}
+	this.m_pairBuffer = new Array(b2Settings.b2_maxPairs);
+	for (i = 0; i < b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairBuffer[i] = new b2BufferedPair();
+	}
+
+	for (i = 0; i < b2Settings.b2_maxPairs; ++i)
+	{
+		this.m_pairs[i].proxyId1 = b2Pair.b2_nullProxy;
+		this.m_pairs[i].proxyId2 = b2Pair.b2_nullProxy;
+		this.m_pairs[i].userData = null;
+		this.m_pairs[i].status = 0;
+		this.m_pairs[i].next = (i + 1);
+	}
+	this.m_pairs[b2Settings.b2_maxPairs-1].next = b2Pair.b2_nullPair;
+	this.m_pairCount = 0;
+};
+
 b2PairManager.prototype = 
 {
 //public:
-	initialize: function(){
-		var i = 0;
-		//b2Settings.b2Assert(b2Math.b2IsPowerOfTwo(b2Pair.b2_tableCapacity) == true);
-		//b2Settings.b2Assert(b2Pair.b2_tableCapacity >= b2Settings.b2_maxPairs);
-		this.m_hashTable = new Array(b2Pair.b2_tableCapacity);
-		for (i = 0; i < b2Pair.b2_tableCapacity; ++i)
-		{
-			this.m_hashTable[i] = b2Pair.b2_nullPair;
-		}
-		this.m_pairs = new Array(b2Settings.b2_maxPairs);
-		for (i = 0; i < b2Settings.b2_maxPairs; ++i)
-		{
-			this.m_pairs[i] = new b2Pair();
-		}
-		this.m_pairBuffer = new Array(b2Settings.b2_maxPairs);
-		for (i = 0; i < b2Settings.b2_maxPairs; ++i)
-		{
-			this.m_pairBuffer[i] = new b2BufferedPair();
-		}
-
-		for (i = 0; i < b2Settings.b2_maxPairs; ++i)
-		{
-			this.m_pairs[i].proxyId1 = b2Pair.b2_nullProxy;
-			this.m_pairs[i].proxyId2 = b2Pair.b2_nullProxy;
-			this.m_pairs[i].userData = null;
-			this.m_pairs[i].status = 0;
-			this.m_pairs[i].next = (i + 1);
-		}
-		this.m_pairs[b2Settings.b2_maxPairs-1].next = b2Pair.b2_nullPair;
-		this.m_pairCount = 0;
-	},
 	//~b2PairManager();
 
 	Initialize: function(broadPhase, callback){

@@ -19,27 +19,17 @@
 
 
 
-var b2Collision = Class.create();
+var b2Collision = function () {
+    //
+};
 b2Collision.prototype = {
 
 	// Null feature
 
-
-
-
 	// Find the separation between poly1 and poly2 for a give edge normal on poly1.
-
-
-
 
 	// Find the max separation between poly1 and poly2 using edge normals
 	// from poly1.
-
-
-
-
-
-
 
 	// Find edge normal of max separation on A - return if separating axis is found
 	// Find edge normal of max separation on B - return if separation axis is found
@@ -47,23 +37,10 @@ b2Collision.prototype = {
 	// Find incident edge
 	// Clip
 	// The normal points from 1 to 2
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	initialize: function() {}}
 b2Collision.b2_nullFeature = 0x000000ff;
+
 b2Collision.ClipSegmentToLine = function(vOut, vIn, normal, offset)
 	{
 		// Start with no output points

@@ -20,57 +20,55 @@
 
 
 
-var b2PolyContact = Class.create();
+var b2PolyContact = function (s1, s2) {
+    // The constructor for b2Contact
+	// initialize instance variables for references
+	this.m_node1 = new b2ContactNode();
+	this.m_node2 = new b2ContactNode();
+	//
+	this.m_flags = 0;
+
+	if (!s1 || !s2){
+		this.m_shape1 = null;
+		this.m_shape2 = null;
+		return;
+	}
+
+	this.m_shape1 = s1;
+	this.m_shape2 = s2;
+
+	this.m_manifoldCount = 0;
+
+	this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
+	this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
+
+	this.m_prev = null;
+	this.m_next = null;
+
+	this.m_node1.contact = null;
+	this.m_node1.prev = null;
+	this.m_node1.next = null;
+	this.m_node1.other = null;
+
+	this.m_node2.contact = null;
+	this.m_node2.prev = null;
+	this.m_node2.next = null;
+	this.m_node2.other = null;
+	//
+
+	// initialize instance variables for references
+	this.m0 = new b2Manifold();
+	this.m_manifold = [new b2Manifold()];
+	//
+
+	//super(shape1, shape2);
+	//b2Settings.b2Assert(this.m_shape1.m_type == b2Shape.e_polyShape);
+	//b2Settings.b2Assert(this.m_shape2.m_type == b2Shape.e_polyShape);
+	this.m_manifold[0].pointCount = 0;
+};
 Object.extend(b2PolyContact.prototype, b2Contact.prototype);
 Object.extend(b2PolyContact.prototype, 
 {
-
-		initialize: function(s1, s2) {
-		// The constructor for b2Contact
-		// initialize instance variables for references
-		this.m_node1 = new b2ContactNode();
-		this.m_node2 = new b2ContactNode();
-		//
-		this.m_flags = 0;
-
-		if (!s1 || !s2){
-			this.m_shape1 = null;
-			this.m_shape2 = null;
-			return;
-		}
-
-		this.m_shape1 = s1;
-		this.m_shape2 = s2;
-
-		this.m_manifoldCount = 0;
-
-		this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
-		this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
-
-		this.m_prev = null;
-		this.m_next = null;
-
-		this.m_node1.contact = null;
-		this.m_node1.prev = null;
-		this.m_node1.next = null;
-		this.m_node1.other = null;
-
-		this.m_node2.contact = null;
-		this.m_node2.prev = null;
-		this.m_node2.next = null;
-		this.m_node2.other = null;
-		//
-
-		// initialize instance variables for references
-		this.m0 = new b2Manifold();
-		this.m_manifold = [new b2Manifold()];
-		//
-
-		//super(shape1, shape2);
-		//b2Settings.b2Assert(this.m_shape1.m_type == b2Shape.e_polyShape);
-		//b2Settings.b2Assert(this.m_shape2.m_type == b2Shape.e_polyShape);
-		this.m_manifold[0].pointCount = 0;
-	},
 	//~b2PolyContact() {}
 
 	// store temp manifold to reduce calls to new
@@ -151,7 +149,8 @@ Object.extend(b2PolyContact.prototype,
 		return this.m_manifold;
 	},
 
-	m_manifold: [new b2Manifold()]});
+	m_manifold: [new b2Manifold()]
+});
 
 b2PolyContact.Create = function(shape1, shape2, allocator){
 		//void* mem = allocator->Allocate(sizeof(b2PolyContact));

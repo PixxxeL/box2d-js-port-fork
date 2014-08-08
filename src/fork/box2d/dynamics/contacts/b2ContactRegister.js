@@ -18,13 +18,15 @@
 
 
 
-var b2ContactRegister = Class.create();
+var b2ContactRegister = function () {
+    //
+};
 b2ContactRegister.prototype = 
 {
 	createFcn: null,
 	destroyFcn: null,
-	primary: null,
-	initialize: function() {}};
+	primary: null
+};
 
 
 

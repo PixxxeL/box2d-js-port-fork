@@ -22,8 +22,6 @@
 
 
 var b2RevoluteJointDef = function () {
-	// call superclass constructor
-	Object.extend(this, new b2JointDef());
 
 	// The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;

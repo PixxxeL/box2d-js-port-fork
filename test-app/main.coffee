@@ -91,9 +91,9 @@ bodies = ->
     addBody({
         name : 'square'
         x : 310
-        y : 30,
-        width : 50
-        height : 50
+        y : 100,
+        width : 30
+        height : 30
         friction : .2
         #restitution : ,
         density : 1
@@ -102,7 +102,7 @@ bodies = ->
     addBody({
         name : 'circle'
         x : 320
-        y : 100
+        y : 150
         radius: 15
         friction : 0.2
         restitution : 0.2

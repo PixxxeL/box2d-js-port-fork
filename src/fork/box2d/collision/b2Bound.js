@@ -18,7 +18,9 @@
 
 
 
-var b2Bound = Class.create();
+var b2Bound = function () {
+    //
+};
 b2Bound.prototype = {
 	IsLower: function(){ return (this.value & 1) == 0; },
 	IsUpper: function(){ return (this.value & 1) == 1; },
@@ -38,6 +40,5 @@ b2Bound.prototype = {
 
 	value: 0,
 	proxyId: 0,
-	stabbingCount: 0,
-
-	initialize: function() {}}
+	stabbingCount: 0
+};

@@ -20,14 +20,13 @@
 
 
 
-var b2JointNode = Class.create();
+var b2JointNode = function () {
+    //
+};
 b2JointNode.prototype = 
 {
-
 	other: null,
 	joint: null,
 	prev: null,
-	next: null,
-
-
-	initialize: function() {}}
+	next: null
+};

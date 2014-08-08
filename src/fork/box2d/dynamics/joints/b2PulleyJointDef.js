@@ -29,8 +29,6 @@
 // useful to prevent one side of the pulley hitting the top.
 
 var b2PulleyJointDef = function () {
-	// call superclass constructor
-    Object.extend(this, new b2JointDef());
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;
 	this.userData = null;

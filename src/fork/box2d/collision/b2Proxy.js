@@ -18,7 +18,12 @@
 
 
 
-var b2Proxy = Class.create();
+var b2Proxy = function () {
+    // initialize instance variables for references
+	this.lowerBounds = [/*uint*/(0), /*uint*/(0)];
+	this.upperBounds = [/*uint*/(0), /*uint*/(0)];
+	//
+};
 b2Proxy.prototype = {
 	GetNext: function(){ return this.lowerBounds[0]; },
 	SetNext: function(next) { this.lowerBounds[0] = next /*& 0x0000ffff*/; },
@@ -30,11 +35,5 @@ b2Proxy.prototype = {
 	overlapCount: 0,
 	timeStamp: 0,
 
-	userData: null,
-
-	initialize: function() {
-		// initialize instance variables for references
-		this.lowerBounds = [/*uint*/(0), /*uint*/(0)];
-		this.upperBounds = [/*uint*/(0), /*uint*/(0)];
-		//
-}}
+	userData: null
+};

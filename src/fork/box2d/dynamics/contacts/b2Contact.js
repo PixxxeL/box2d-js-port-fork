@@ -25,7 +25,41 @@
 
 
 
-var b2Contact = Class.create();
+var b2Contact = function (s1, s2) {
+    // initialize instance variables for references
+	this.m_node1 = new b2ContactNode();
+	this.m_node2 = new b2ContactNode();
+	//
+
+	this.m_flags = 0;
+
+	if (!s1 || !s2){
+		this.m_shape1 = null;
+		this.m_shape2 = null;
+		return;
+	}
+
+	this.m_shape1 = s1;
+	this.m_shape2 = s2;
+
+	this.m_manifoldCount = 0;
+
+	this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
+	this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
+
+	this.m_prev = null;
+	this.m_next = null;
+
+	this.m_node1.contact = null;
+	this.m_node1.prev = null;
+	this.m_node1.next = null;
+	this.m_node1.other = null;
+
+	this.m_node2.contact = null;
+	this.m_node2.prev = null;
+	this.m_node2.next = null;
+	this.m_node2.other = null;
+};
 b2Contact.prototype = 
 {
 	GetManifolds: function(){return null},
@@ -51,44 +85,6 @@ b2Contact.prototype =
 	// this.m_flags
 	// enum
 
-
-	initialize: function(s1, s2)
-	{
-		// initialize instance variables for references
-		this.m_node1 = new b2ContactNode();
-		this.m_node2 = new b2ContactNode();
-		//
-
-		this.m_flags = 0;
-
-		if (!s1 || !s2){
-			this.m_shape1 = null;
-			this.m_shape2 = null;
-			return;
-		}
-
-		this.m_shape1 = s1;
-		this.m_shape2 = s2;
-
-		this.m_manifoldCount = 0;
-
-		this.m_friction = Math.sqrt(this.m_shape1.m_friction * this.m_shape2.m_friction);
-		this.m_restitution = b2Math.b2Max(this.m_shape1.m_restitution, this.m_shape2.m_restitution);
-
-		this.m_prev = null;
-		this.m_next = null;
-
-		this.m_node1.contact = null;
-		this.m_node1.prev = null;
-		this.m_node1.next = null;
-		this.m_node1.other = null;
-
-		this.m_node2.contact = null;
-		this.m_node2.prev = null;
-		this.m_node2.next = null;
-		this.m_node2.other = null;
-	},
-
 	//virtual ~b2Contact() {}
 
 	Evaluate: function(){},
@@ -110,7 +106,8 @@ b2Contact.prototype =
 
 	// Combined friction
 	m_friction: null,
-	m_restitution: null};
+	m_restitution: null
+};
 b2Contact.e_islandFlag = 0x0001;
 b2Contact.e_destroyFlag = 0x0002;
 b2Contact.AddType = function(createFcn, destroyFcn, type1, type2)

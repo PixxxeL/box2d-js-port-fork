@@ -24,11 +24,12 @@
 
 
 
-var b2Pair = Class.create();
+var b2Pair = function () {
+    //
+};
+
 b2Pair.prototype = 
 {
-
-
 	SetBuffered: function()	{ this.status |= b2Pair.e_pairBuffered; },
 	ClearBuffered: function()	{ this.status &= ~b2Pair.e_pairBuffered; },
 	IsBuffered: function(){ return (this.status & b2Pair.e_pairBuffered) == b2Pair.e_pairBuffered; },
@@ -44,13 +45,14 @@ b2Pair.prototype =
 	proxyId1: 0,
 	proxyId2: 0,
 	next: 0,
-	status: 0,
+	status: 0
 
 	// STATIC
 
 	// enum
 
-	initialize: function() {}};
+};
+
 b2Pair.b2_nullPair = b2Settings.USHRT_MAX;
 b2Pair.b2_nullProxy = b2Settings.USHRT_MAX;
 b2Pair.b2_tableCapacity = b2Settings.b2_maxPairs;

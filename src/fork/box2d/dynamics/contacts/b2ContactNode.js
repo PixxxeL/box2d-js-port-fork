@@ -20,14 +20,16 @@
 
 
 
-var b2ContactNode = Class.create();
+var b2ContactNode = function () {
+    //
+};
 b2ContactNode.prototype = 
 {
 	other: null,
 	contact: null,
 	prev: null,
-	next: null,
-	initialize: function() {}};
+	next: null
+};
 
 
 

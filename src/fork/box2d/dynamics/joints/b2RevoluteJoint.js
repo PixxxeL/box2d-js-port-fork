@@ -34,8 +34,6 @@
 // K = invI1 + invI2
 
 var b2RevoluteJoint = function (def) {
-	// call superclass constructor
-	Object.extend(this, new b2Joint(def));
 	// The constructor for b2Joint
 	// initialize instance variables for references
 	this.m_node1 = new b2JointNode();

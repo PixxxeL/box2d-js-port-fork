@@ -19,7 +19,12 @@
 
 
 // A manifold for two touching convex shapes.
-var b2AABB = Class.create();
+var b2AABB = function () {
+    // initialize instance variables for references
+	this.minVertex = new b2Vec2();
+	this.maxVertex = new b2Vec2();
+	//
+};
 b2AABB.prototype = 
 {
 	IsValid: function(){
@@ -36,10 +41,5 @@ b2AABB.prototype =
 	},
 
 	minVertex: new b2Vec2(),
-	maxVertex: new b2Vec2(),
-	initialize: function() {
-		// initialize instance variables for references
-		this.minVertex = new b2Vec2();
-		this.maxVertex = new b2Vec2();
-		//
-}};
+	maxVertex: new b2Vec2()
+};

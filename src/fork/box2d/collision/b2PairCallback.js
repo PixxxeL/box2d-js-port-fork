@@ -31,5 +31,3 @@ b2PairCallback.prototype =
 	PairRemoved: function(proxyUserData1, proxyUserData2, pairUserData){}
 
 };
-
-
