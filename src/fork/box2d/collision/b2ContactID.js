@@ -22,7 +22,7 @@
  * @class b2ContactID
  * @constructor
  */
-var  = function () {
+var b2ContactID = function () {
     // initialize instance variables for references
 	this.features = new Features();
 	//

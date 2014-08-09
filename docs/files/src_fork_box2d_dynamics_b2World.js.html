@@ -751,7 +751,7 @@ b2World.prototype =
 	 * @param callback {Function}
 	 * @param point {b2Vec2}
 	 */
-	QueryPoint = function (callback, point) {
+	QueryPoint : function (callback, point) {
 	    var body, shape;
 	    for (body = this.m_bodyList; body; body = body.m_next) {
 	        for (shape = body.GetShapeList(); shape != null; shape = shape.GetNext()) {

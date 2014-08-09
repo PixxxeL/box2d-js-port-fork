@@ -16,7 +16,10 @@
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
+/**
+ * @class b2Settings
+ * @constructor
+ */
 var b2Settings = function () {};
 b2Settings.prototype = {
 
@@ -94,12 +97,15 @@ Object.extend = function (destination, source) {
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// b2Vec2 has no constructor so that it
-// can be placed in a union.
+/**
+ * b2Vec2 has no constructor so that it
+ * can be placed in a union.
+ *
+ * @class b2Vec2
+ * @constructor
+ * @param x
+ * @param y
+ */
 var b2Vec2 = function (x_, y_) {
 	this.x=x_;
 	this.y=y_;
@@ -231,7 +237,13 @@ b2Vec2.Make = function(x_, y_)
 
 
 
-
+/**
+ * @class b2Mat22
+ * @constructor
+ * @param angle
+ * @param c1
+ * @param c2
+ */
 var b2Mat22 = function (angle, c1, c2) {
 	if (angle==null) angle = 0;
 	// initialize instance variables for references
@@ -358,7 +370,10 @@ b2Mat22.prototype =
 */
 
 
-
+/**
+ * @class b2Math
+ * @constructor
+ */
 var b2Math = function () {};
 b2Math.prototype = {
 
@@ -553,9 +568,12 @@ b2Math.tempMat = new b2Mat22();
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * An axis aligned bounding box.
+ * 
+ * @class b2AABB
+ * @constructor
+ */
 var b2AABB = function () {
     // initialize instance variables for references
 	this.minVertex = new b2Vec2();
@@ -564,6 +582,11 @@ var b2AABB = function () {
 };
 b2AABB.prototype = 
 {
+	/**
+	 * Verify that the bounds are sorted.
+	 *
+	 * @method IsValid
+	 */
 	IsValid: function(){
 		//var d = b2Math.SubtractVV(this.maxVertex, this.minVertex);
 		var dX = this.maxVertex.x;
@@ -599,7 +622,10 @@ b2AABB.prototype =
 */
 
 
-
+/**
+ * @class b2Bound
+ * @constructor
+ */
 var b2Bound = function () {
     //
 };
@@ -643,7 +669,10 @@ b2Bound.prototype = {
 */
 
 
-
+/**
+ * @class b2BoundValues
+ * @constructor
+ */
 var b2BoundValues = function () {
     // initialize instance variables for references
     this.lowerValues = [0,0];
@@ -672,14 +701,14 @@ b2BoundValues.prototype = {
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-// The pair manager is used by the broad-phase to quickly add/remove/find pairs
-// of overlapping proxies. It is based closely on code provided by Pierre Terdiman.
-// http:
-
-
-
-
-
+/**
+ * The pair manager is used by the broad-phase to quickly add/remove/find pairs
+ * of overlapping proxies. It is based closely on code provided by Pierre Terdiman.
+ * http:
+ * 
+ * @class b2Pair
+ * @constructor
+ */
 var b2Pair = function () {
     //
 };
@@ -735,7 +764,10 @@ b2Pair.e_pairFinal = 0x0004;
 */
 
 
-
+/**
+ * @class b2PairCallback
+ * @constructor
+ */
 var b2PairCallback = function () {};
 b2PairCallback.prototype = 
 {
@@ -768,7 +800,10 @@ b2PairCallback.prototype =
 */
 
 
-
+/**
+ * @class b2BufferedPair
+ * @constructor
+ */
 var b2BufferedPair = function () {
     //
 };
@@ -794,14 +829,14 @@ b2BufferedPair.prototype = {
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-// The pair manager is used by the broad-phase to quickly add/remove/find pairs
-// of overlapping proxies. It is based closely on code provided by Pierre Terdiman.
-// http:
-
-
-
-
-
+/**
+ * The pair manager is used by the broad-phase to quickly add/remove/find pairs
+ * of overlapping proxies. It is based closely on code provided by Pierre Terdiman.
+ * http:
+ *
+ * @class b2PairManager
+ * @constructor
+ */
 var b2PairManager = function () {
     var i = 0;
 	//b2Settings.b2Assert(b2Math.b2IsPowerOfTwo(b2Pair.b2_tableCapacity) == true);
@@ -1180,30 +1215,27 @@ b2PairManager.EqualsPair = function(pair1, pair2)
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-/*
-This broad phase uses the Sweep and Prune algorithm in:
-Collision Detection in Interactive 3D Environments by Gino van den Bergen
-Also, some ideas, such integral values for fast compares comes from
-Bullet (http:/www.bulletphysics.com).
-*/
-
-
-// Notes:
-// - we use bound arrays instead of linked lists for cache coherence.
-// - we use quantized integral values for fast compares.
-// - we use short indices rather than pointers to save memory.
-// - we use a stabbing count for fast overlap queries (less than order N).
-// - we also use a time stamp on each proxy to speed up the registration of
-//   overlap query results.
-// - where possible, we compare bound indices instead of values to reduce
-//   cache misses (TODO_ERIN).
-// - no broadphase is perfect and neither is this one: it is not great for huge
-//   worlds (use a multi-SAP instead), it is not great for large objects.
-
+/**
+ * This broad phase uses the Sweep and Prune algorithm in:
+ * Collision Detection in Interactive 3D Environments by Gino van den Bergen
+ * Also, some ideas, such integral values for fast compares comes from
+ * Bullet (http:/www.bulletphysics.com).
+ * 
+ * Notes:
+ * - we use bound arrays instead of linked lists for cache coherence.
+ * - we use quantized integral values for fast compares.
+ * - we use short indices rather than pointers to save memory.
+ * - we use a stabbing count for fast overlap queries (less than order N).
+ * - we also use a time stamp on each proxy to speed up the registration of
+ *   overlap query results.
+ * - where possible, we compare bound indices instead of values to reduce
+ *   cache misses (TODO_ERIN).
+ * - no broadphase is perfect and neither is this one: it is not great for huge
+ *   worlds (use a multi-SAP instead), it is not great for large objects.
+ * 
+ * @class b2Bound
+ * @constructor
+ */
 var b2BroadPhase = function (worldAABB, callback) {
     // initialize instance variables for references
 	this.m_pairManager = new b2PairManager();
@@ -2079,7 +2111,10 @@ b2BroadPhase.BinarySearch = function(bounds, count, value)
 
 
 
-
+/**
+ * @class b2Collision
+ * @constructor
+ */
 var b2Collision = function () {
     //
 };
@@ -2792,8 +2827,12 @@ b2Collision.b2TestOverlap = function(a, b)
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-// We use contact ids to facilitate warm starting.
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class Features
+ * @constructor
+ */
 var Features = function () {
     //
 };
@@ -2855,9 +2894,12 @@ Features.prototype =
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// We use contact ids to facilitate warm starting.
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class b2ContactID
+ * @constructor
+ */
 var b2ContactID = function () {
     // initialize instance variables for references
 	this.features = new Features();
@@ -2906,9 +2948,12 @@ b2ContactID.prototype =
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// We use contact ids to facilitate warm starting.
+/**
+ * We use contact ids to facilitate warm starting.
+ * 
+ * @class b2ContactPoint
+ * @constructor
+ */
 var b2ContactPoint = function () {
     // initialize instance variables for references
 	this.position = new b2Vec2();
@@ -2942,7 +2987,10 @@ b2ContactPoint.prototype =
 */
 
 
-
+/**
+ * @class b2Distance
+ * @constructor
+ */
 var b2Distance = function () {
     //
 };
@@ -3270,9 +3318,12 @@ b2Distance.g_GJK_Iterations = 0;
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * A manifold for two touching convex shapes.
+ * 
+ * @class b2Manifold
+ * @constructor
+ */
 var b2Manifold = function () {
     this.points = new Array(b2Settings.b2_maxManifoldPoints);
 	for (var i = 0; i < b2Settings.b2_maxManifoldPoints; i++){
@@ -3304,9 +3355,12 @@ b2Manifold.prototype =
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// A manifold for two touching convex shapes.
+/**
+ * A manifold for two touching convex shapes.
+ * 
+ * @class b2OBB
+ * @constructor
+ */
 var b2OBB = function () {
     // initialize instance variables for references
     this.R = new b2Mat22();
@@ -3339,7 +3393,10 @@ b2OBB.prototype =
 */
 
 
-
+/**
+ * @class b2Proxy
+ * @constructor
+ */
 var b2Proxy = function () {
     // initialize instance variables for references
 	this.lowerBounds = [/*uint*/(0), /*uint*/(0)];
@@ -3380,7 +3437,10 @@ b2Proxy.prototype = {
 
 
 
-
+/**
+ * @class ClipVertex
+ * @constructor
+ */
 var ClipVertex = function () {
     // initialize instance variables for references
     this.v = new b2Vec2();
@@ -3412,15 +3472,13 @@ ClipVertex.prototype =
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-
-
-// Shapes are created automatically when a body is created.
-// Client code does not normally interact with shapes.
+/**
+ * Shapes are created automatically when a body is created.
+ * Client code does not normally interact with shapes.
+ *
+ * @class b2Shape
+ * @constructor
+ */
 var b2Shape = function (def, body) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();
@@ -3738,7 +3796,10 @@ b2Shape.PolyCentroid = function(vs, count, out)
 
 
 
-
+/**
+ * @class b2ShapeDef
+ * @constructor
+ */
 var b2ShapeDef = function () {
     this.type = b2Shape.e_unknownShape;
 	this.userData = null;
@@ -3846,7 +3907,10 @@ b2ShapeDef.prototype =
 
 
 
-
+/**
+ * @class b2BoxDef
+ * @constructor
+ */
 var b2BoxDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;
@@ -3893,7 +3957,10 @@ Object.extend(b2BoxDef.prototype,
 
 
 
-
+/**
+ * @class b2CircleDef
+ * @constructor
+ */
 var b2CircleDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;
@@ -3940,7 +4007,10 @@ Object.extend(b2CircleDef.prototype,
 
 
 
-
+/**
+ * @class b2CircleShape
+ * @constructor
+ */
 var b2CircleShape = function (def, body, localCenter) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();
@@ -4136,7 +4206,10 @@ Object.extend(b2CircleShape.prototype,
 
 
 
-
+/**
+ * @class b2MassData
+ * @constructor
+ */
 var b2MassData = function () {
     // initialize instance variables for references
     this.center = new b2Vec2(0,0);
@@ -4171,7 +4244,10 @@ b2MassData.prototype =
 
 
 
-
+/**
+ * @class b2PolyDef
+ * @constructor
+ */
 var b2PolyDef = function () {
     // The constructor for b2ShapeDef
 	this.type = b2Shape.e_unknownShape;
@@ -4222,18 +4298,20 @@ Object.extend(b2PolyDef.prototype,
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// A convex polygon. The position of the polygon (m_position) is the
-// position of the centroid. The vertices of the incoming polygon are pre-rotated
-// according to the local rotation. The vertices are also shifted to be centered
-// on the centroid. Since the local rotation is absorbed into the vertex
-// coordinates, the polygon rotation is equal to the body rotation. However,
-// the polygon position is centered on the polygon centroid. This simplifies
-// some collision algorithms.
-
+/**
+ * A convex polygon
+ *
+ * The position of the polygon (m_position) is the
+ * position of the centroid. The vertices of the incoming polygon are pre-rotated
+ * according to the local rotation. The vertices are also shifted to be centered
+ * on the centroid. Since the local rotation is absorbed into the vertex
+ * coordinates, the polygon rotation is equal to the body rotation. However,
+ * the polygon position is centered on the polygon centroid. This simplifies
+ * some collision algorithms.
+ * 
+ * @class b2PolyShape
+ * @constructor
+ */
 var b2PolyShape = function (def, body, newOrigin) {
     // initialize instance variables for references
 	this.m_R = new b2Mat22();
@@ -4712,14 +4790,16 @@ b2PolyShape.tAbsR = new b2Mat22();
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// A rigid body. Internal computation are done in terms
-// of the center of mass position. The center of mass may
-// be offset from the body's origin.
+/**
+ * A rigid body. Internal computation are done in terms
+ * of the center of mass position. The center of mass may
+ * be offset from the body's origin.
+ *
+ * @class b2Body
+ * @constructor
+ * @param bd
+ * @param world
+ */
 var b2Body = function (bd, world) {
 	// initialize instance variables for references
 	this.sMat0 = new b2Mat22();
@@ -5186,7 +5266,10 @@ b2Body.e_destroyFlag = 0x0020;
 
 
 
-
+/**
+ * @class b2BodyDef
+ * @constructor
+ */
 var b2BodyDef = function () {
 	// initialize instance variables for references
 	this.shapes = new Array();
@@ -5256,7 +5339,10 @@ b2BodyDef.prototype =
 
 
 
-
+/**
+ * @class b2CollisionFilter
+ * @constructor
+ */
 var b2CollisionFilter = function () {};
 b2CollisionFilter.prototype = 
 {
@@ -5375,7 +5461,10 @@ probably default to the slower Full NGS and let the user select the faster
 Baumgarte method in performance critical scenarios.
 */
 
-
+/**
+ * @class b2Island
+ * @constructor
+ */
 var b2Island = function (bodyCapacity, contactCapacity, jointCapacity, allocator) {
 	var i = 0;
 
@@ -5624,7 +5713,10 @@ b2Island.m_positionIterationCount = 0;
 */
 
 
-
+/**
+ * @class b2TimeStep
+ * @constructor
+ */
 var b2TimeStep = function () {};
 b2TimeStep.prototype = 
 {
@@ -5653,7 +5745,10 @@ b2TimeStep.prototype =
 
 
 
-
+/**
+ * @class b2ContactNode
+ * @constructor
+ */
 var b2ContactNode = function () {
     //
 };
@@ -5693,7 +5788,10 @@ b2ContactNode.prototype =
 //typedef void b2ContactDestroyFcn(b2Contact* contact, b2BlockAllocator* allocator);
 
 
-
+/**
+ * @class b2Contact
+ * @constructor
+ */
 var b2Contact = function (s1, s2) {
     // initialize instance variables for references
 	this.m_node1 = new b2ContactNode();
@@ -5886,7 +5984,10 @@ b2Contact.s_initialized = false;
 
 
 
-
+/**
+ * @class b2ContactConstraint
+ * @constructor
+ */
 var b2ContactConstraint = function () {
     // initialize instance variables for references
 	this.normal = new b2Vec2();
@@ -5929,7 +6030,10 @@ b2ContactConstraint.prototype =
 
 
 
-
+/**
+ * @class b2ContactConstraintPoint
+ * @constructor
+ */
 var b2ContactConstraintPoint = function () {
     // initialize instance variables for references
 	this.localAnchor1 = new b2Vec2();
@@ -5967,7 +6071,10 @@ b2ContactConstraintPoint.prototype =
 */
 
 
-
+/**
+ * @class b2ContactRegister
+ * @constructor
+ */
 var b2ContactRegister = function () {
     //
 };
@@ -6001,7 +6108,10 @@ b2ContactRegister.prototype =
 
 
 
-
+/**
+ * @class b2ContactSolver
+ * @constructor
+ */
 var b2ContactSolver = function (contacts, contactCount, allocator) {
     // initialize instance variables for references
 	this.m_constraints = new Array();
@@ -6536,7 +6646,10 @@ b2ContactSolver.prototype =
 
 
 
-
+/**
+ * @class b2CircleContact
+ * @constructor
+ */
 var b2CircleContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references
@@ -6638,7 +6751,10 @@ b2CircleContact.Destroy = function(contact, allocator){
 
 
 
-
+/**
+ * @class b2Conservative
+ * @constructor
+ */
 var b2Conservative = function () {
     //
 };
@@ -6866,7 +6982,10 @@ b2Conservative.Conservative = function (shape1, shape2) {
 
 
 
-
+/**
+ * @class b2NullContact
+ * @constructor
+ */
 var b2NullContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references
@@ -6931,7 +7050,10 @@ Object.extend(b2NullContact.prototype,
 
 
 
-
+/**
+ * @class b2PolyAndCircleContact
+ * @constructor
+ */
 var b2PolyAndCircleContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references
@@ -7033,7 +7155,10 @@ b2PolyAndCircleContact.Destroy = function(contact, allocator){
 
 
 
-
+/**
+ * @class b2PolyContact
+ * @constructor
+ */
 var b2PolyContact = function (s1, s2) {
     // The constructor for b2Contact
 	// initialize instance variables for references
@@ -7195,7 +7320,10 @@ b2PolyContact.Destroy = function(contact, allocator){
 
 
 
-
+/**
+ * @class b2ContactManager
+ * @constructor
+ */
 var b2ContactManager = function () {
 	// The constructor for b2PairCallback
 	//
@@ -7532,7 +7660,13 @@ Object.extend(b2ContactManager.prototype,
 
 
 
-
+/**
+ * @class b2World
+ * @constructor
+ * @param worldAABB {b2AABB} axis aligned bounding box
+ * @param gravity {b2Vec2} gravity force vector
+ * @param doSleep {Boolean} bodies can sleep
+ */
 var b2World = function (worldAABB, gravity, doSleep) {
 	this.step = new b2TimeStep();
 	this.m_contactManager = new b2ContactManager();
@@ -7570,12 +7704,18 @@ b2World.prototype =
 
 	// Set a callback to notify you when a joint is implicitly destroyed
 	// when an attached body is destroyed.
+	/**
+	 * @method SetListener
+	 */
 	SetListener: function(listener){
 		this.m_listener = listener;
 	},
 
 	// Register a collision filter to provide specific control over collision.
 	// Otherwise the default filter is used (b2CollisionFilter).
+	/**
+	 * @method SetFilter
+	 */
 	SetFilter: function(filter){
 		this.m_filter = filter;
 	},
@@ -7583,6 +7723,9 @@ b2World.prototype =
 	// Create and destroy rigid bodies. Destruction is deferred until the
 	// the next call to this.Step. This is done so that bodies may be destroyed
 	// while you iterate through the contact list.
+	/**
+	 * @method CreateBody
+	 */
 	CreateBody: function(def){
 		//void* mem = this.m_blockAllocator.Allocate(sizeof(b2Body));
 		var b = new b2Body(def, this);
@@ -7599,6 +7742,9 @@ b2World.prototype =
 		return b;
 	},
 	// Body destruction is deferred to make contact processing more robust.
+	/**
+	 * @method DestroyBody
+	 */
 	DestroyBody: function(b)
 	{
 
@@ -7635,6 +7781,9 @@ b2World.prototype =
 		this.m_bodyDestroyList = b;
 	},
 
+	/**
+	 * @method CleanBodyList
+	 */
 	CleanBodyList: function()
 	{
 		this.m_contactManager.m_destroyImmediate = true;
@@ -7673,6 +7822,9 @@ b2World.prototype =
 		this.m_contactManager.m_destroyImmediate = false;
 	},
 
+	/**
+	 * @method CreateJoint
+	 */
 	CreateJoint: function(def){
 		var j = b2Joint.Create(def, this.m_blockAllocator);
 
@@ -7714,6 +7866,9 @@ b2World.prototype =
 
 		return j;
 	},
+	/**
+	 * @method DestroyJoint
+	 */
 	DestroyJoint: function(j)
 	{
 
@@ -7800,6 +7955,9 @@ b2World.prototype =
 
 	// The world provides a single ground body with no collision shapes. You
 	// can use this to simplify the creation of joints.
+	/**
+	 * @method GetGroundBody
+	 */
 	GetGroundBody: function(){
 		return this.m_groundBody;
 	},
@@ -7807,6 +7965,9 @@ b2World.prototype =
 
 	step: new b2TimeStep(),
 	// this.Step
+	/**
+	 * @method Step
+	 */
 	Step: function(dt, iterations){
 
 		var b;
@@ -7975,6 +8136,9 @@ b2World.prototype =
 	// this.Query the world for all shapes that potentially overlap the
 	// provided AABB. You provide a shape pointer buffer of specified
 	// size. The number of shapes found is returned.
+	/**
+	 * @method Query
+	 */
 	Query: function(aabb, shapes, maxCount){
 
 		//void** results = (void**)this.m_stackAllocator.Allocate(maxCount * sizeof(void*));
@@ -7991,16 +8155,44 @@ b2World.prototype =
 	},
 
 	// You can use these to iterate over all the bodies, joints, and contacts.
+	/**
+	 * @method GetBodyList
+	 */
 	GetBodyList: function(){
 		return this.m_bodyList;
 	},
+	/**
+	 * @method GetJointList
+	 */
 	GetJointList: function(){
 		return this.m_jointList;
 	},
+	/**
+	 * @method GetContactList
+	 */
 	GetContactList: function(){
 		return this.m_contactList;
 	},
 
+	/**
+	 * @method QueryPoint
+	 * @param callback {Function}
+	 * @param point {b2Vec2}
+	 */
+	QueryPoint : function (callback, point) {
+	    var body, shape;
+	    for (body = this.m_bodyList; body; body = body.m_next) {
+	        for (shape = body.GetShapeList(); shape != null; shape = shape.GetNext()) {
+	            if (shape.TestPoint(point)) {
+	                callback(body);
+	            }
+	        }
+	    }
+	},
+
+	/**
+	 * @method DebugDraw
+	 */
 	DebugDraw : function () {
 	    var item, shape;
 	    this.ctx.clearRect(0, 0, this.ctx.width, this.ctx.height);
@@ -8013,6 +8205,9 @@ b2World.prototype =
 	        }
 	    }
 	},
+	/**
+	 * @method SetDebugDraw
+	 */
 	SetDebugDraw : function (params) {
 	    params = params || {};
 	    this.ctx = params.ctx; 
@@ -8109,9 +8304,17 @@ b2World.prototype =
 
 	m_broadPhase: null,
 	m_contactManager: new b2ContactManager(),
-
+	/**
+	 * @property m_bodyList
+	 */
 	m_bodyList: null,
+	/**
+	 * @property m_contactList
+	 */
 	m_contactList: null,
+	/**
+	 * @property m_jointList
+	 */
 	m_jointList: null,
 
 	m_bodyCount: 0,
@@ -8158,7 +8361,10 @@ b2World.s_enableWarmStarting = 1;
 
 
 
-
+/**
+ * @class b2WorldListener
+ * @constructor
+ */
 var b2WorldListener = function () {};
 b2WorldListener.prototype = 
 {
@@ -8205,7 +8411,10 @@ b2WorldListener.b2_destroyBody = 1;
 
 
 
-
+/**
+ * @class b2JointNode
+ * @constructor
+ */
 var b2JointNode = function () {
     //
 };
@@ -8237,7 +8446,10 @@ b2JointNode.prototype =
 
 
 
-
+/**
+ * @class b2Joint
+ * @constructor
+ */
 var b2Joint = function (def) {
 	// initialize instance variables for references
 	this.m_node1 = new b2JointNode();
@@ -8438,7 +8650,10 @@ b2Joint.e_equalLimits = 3;
 
 
 
-
+/**
+ * @class b2JointDef
+ * @constructor
+ */
 var b2JointDef = function () {
 	this.type = b2Joint.e_unknownJoint;
 	this.userData = null;
@@ -8473,15 +8688,17 @@ b2JointDef.prototype =
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-// C = norm(p2 - p1) - L
-// u = (p2 - p1) / norm(p2 - p1)
-// Cdot = dot(u, v2 + cross(w2, r2) - v1 - cross(w1, r1))
-// J = [-u -cross(r1, u) u cross(r2, u)]
-// K = J * invM * JT
-//   = invMass1 + invI1 * cross(r1, u)^2 + invMass2 + invI2 * cross(r2, u)^2
-
+/**
+ * C = norm(p2 - p1) - L
+ * u = (p2 - p1) / norm(p2 - p1)
+ * Cdot = dot(u, v2 + cross(w2, r2) - v1 - cross(w1, r1))
+ * J = [-u -cross(r1, u) u cross(r2, u)]
+ * K = J * invM * JT
+ *   = invMass1 + invI1 * cross(r1, u)^2 + invMass2 + invI2 * cross(r2, u)^2
+ * 
+ * @class b2DistanceJoint
+ * @constructor
+ */
 var b2DistanceJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references
@@ -8738,7 +8955,10 @@ Object.extend(b2DistanceJoint.prototype,
 
 
 
-
+/**
+ * @class b2DistanceJointDef
+ * @constructor
+ */
 var b2DistanceJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;
@@ -8784,7 +9004,10 @@ Object.extend(b2DistanceJointDef.prototype,
 
 
 
-
+/**
+ * @class b2Jacobian
+ * @constructor
+ */
 var b2Jacobian = function () {
     // initialize instance variables for references
 	this.linear1 = new b2Vec2();
@@ -8834,7 +9057,10 @@ b2Jacobian.prototype =
 
 
 
-
+/**
+ * @class b2GearJoint
+ * @constructor
+ */
 var b2GearJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references
@@ -9134,22 +9360,23 @@ Object.extend(b2GearJoint.prototype,
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// A gear joint is used to connect two joints together. Either joint
-// can be a revolute or prismatic joint. You specify a gear ratio
-// to bind the motions together:
-// coordinate1 + ratio * coordinate2 = constant
-// The ratio can be negative or positive. If one joint is a revolute joint
-// and the other joint is a prismatic joint, then the ratio will have units
-// of length or units of 1/length.
-//
-// RESTRICITON: The revolute and prismatic joints must be attached to
-// a fixed body (which must be body1 on those joints).
-
+/**
+ * A gear joint is used to connect two joints together. 
+ * 
+ * Either joint can be a revolute or prismatic joint. You specify a gear ratio
+ * to bind the motions together:
+ * coordinate1 + ratio * coordinate2 = constant
+ * 
+ * The ratio can be negative or positive. If one joint is a revolute joint
+ * and the other joint is a prismatic joint, then the ratio will have units
+ * of length or units of 1/length.
+ * 
+ * RESTRICITON: The revolute and prismatic joints must be attached to
+ * a fixed body (which must be body1 on those joints).
+ * 
+ * @class b2GearJointDef
+ * @constructor
+ */
 var b2GearJointDef = function () {
     this.type = b2Joint.e_gearJoint;
 	this.joint1 = null;
@@ -9182,18 +9409,18 @@ Object.extend(b2GearJointDef.prototype,
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// p = attached point, m = mouse point
-// C = p - m
-// Cdot = v
-//      = v + cross(w, r)
-// J = [I r_skew]
-// Identity used:
-// w k % (rx i + ry j) = w * (-ry i + rx j)
-
+/**
+ * p = attached point, m = mouse point
+ * C = p - m
+ * Cdot = v
+ *      = v + cross(w, r)
+ * J = [I r_skew]
+ * Identity used:
+ * w k % (rx i + ry j) = w * (-ry i + rx j)
+ * 
+ * @class b2MouseJoint
+ * @constructor
+ */
 var b2MouseJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references
@@ -9418,7 +9645,10 @@ Object.extend(b2MouseJoint.prototype,
 
 
 
-
+/**
+ * @class b2MouseJointDef
+ * @constructor
+ */
 var b2MouseJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;
@@ -9466,28 +9696,28 @@ Object.extend(b2MouseJointDef.prototype,
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// Linear constraint (point-to-line)
-// d = p2 - p1 = x2 + r2 - x1 - r1
-// C = dot(ay1, d)
-// Cdot = dot(d, cross(w1, ay1)) + dot(ay1, v2 + cross(w2, r2) - v1 - cross(w1, r1))
-//      = -dot(ay1, v1) - dot(cross(d + r1, ay1), w1) + dot(ay1, v2) + dot(cross(r2, ay1), v2)
-// J = [-ay1 -cross(d+r1,ay1) ay1 cross(r2,ay1)]
-//
-// Angular constraint
-// C = a2 - a1 + a_initial
-// Cdot = w2 - w1
-// J = [0 0 -1 0 0 1]
-
-// Motor/Limit linear constraint
-// C = dot(ax1, d)
-// Cdot = = -dot(ax1, v1) - dot(cross(d + r1, ax1), w1) + dot(ax1, v2) + dot(cross(r2, ax1), v2)
-// J = [-ax1 -cross(d+r1,ax1) ax1 cross(r2,ax1)]
-
-
+/**
+ * Linear constraint (point-to-line)
+ * 
+ * d = p2 - p1 = x2 + r2 - x1 - r1
+ * C = dot(ay1, d)
+ * Cdot = dot(d, cross(w1, ay1)) + dot(ay1, v2 + cross(w2, r2) - v1 - cross(w1, r1))
+ *      = -dot(ay1, v1) - dot(cross(d + r1, ay1), w1) + dot(ay1, v2) + dot(cross(r2, ay1), v2)
+ * J = [-ay1 -cross(d+r1,ay1) ay1 cross(r2,ay1)]
+ * 
+ * Angular constraint
+ * C = a2 - a1 + a_initial
+ * Cdot = w2 - w1
+ * J = [0 0 -1 0 0 1]
+ * 
+ * Motor/Limit linear constraint
+ * C = dot(ax1, d)
+ * Cdot = = -dot(ax1, v1) - dot(cross(d + r1, ax1), w1) + dot(ax1, v2) + dot(cross(r2, ax1), v2)
+ * J = [-ax1 -cross(d+r1,ax1) ax1 cross(r2,ax1)]
+ * 
+ * @class b2PrismaticJoint
+ * @constructor
+ */
 var b2PrismaticJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references
@@ -10143,7 +10373,10 @@ Object.extend(b2PrismaticJoint.prototype,
 
 
 
-
+/**
+ * @class b2PrismaticJointDef
+ * @constructor
+ */
 var b2PrismaticJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;
@@ -10199,7 +10432,10 @@ Object.extend(b2PrismaticJointDef.prototype,
 
 
 
-
+/**
+ * @class b2PulleyJoint
+ * @constructor
+ */
 var b2PulleyJoint = function (def) {
     // The constructor for b2Joint
 	// initialize instance variables for references
@@ -10810,18 +11046,18 @@ b2PulleyJoint.b2_minPulleyLength = b2Settings.b2_lengthUnitsPerMeter;
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-
-// The pulley joint is connected to two bodies and two fixed ground points.
-// The pulley supports a ratio such that:
-// length1 + ratio * length2 = constant
-// Yes, the force transmitted is scaled by the ratio.
-// The pulley also enforces a maximum length limit on both sides. This is
-// useful to prevent one side of the pulley hitting the top.
-
+/**
+ * The pulley joint is connected to two bodies and two fixed ground points.
+ * 
+ * The pulley supports a ratio such that:
+ * length1 + ratio * length2 = constant
+ * Yes, the force transmitted is scaled by the ratio.
+ * The pulley also enforces a maximum length limit on both sides. This is
+ * useful to prevent one side of the pulley hitting the top.
+ * 
+ * @class b2PulleyJointDef
+ * @constructor
+ */
 var b2PulleyJointDef = function () {
     // The constructor for b2JointDef
 	this.type = b2Joint.e_unknownJoint;
@@ -10879,23 +11115,24 @@ Object.extend(b2PulleyJointDef.prototype,
 * 3. This notice may not be removed or altered from any source distribution.
 */
 
-
-
-
-
-// Point-to-point constraint
-// C = p2 - p1
-// Cdot = v2 - v1
-//      = v2 + cross(w2, r2) - v1 - cross(w1, r1)
-// J = [-I -r1_skew I r2_skew ]
-// Identity used:
-// w k % (rx i + ry j) = w * (-ry i + rx j)
-
-// Motor constraint
-// Cdot = w2 - w1
-// J = [0 0 -1 0 0 1]
-// K = invI1 + invI2
-
+/**
+ * Point-to-point constraint
+ *
+ * C = p2 - p1
+ * Cdot = v2 - v1
+ *      = v2 + cross(w2, r2) - v1 - cross(w1, r1)
+ * J = [-I -r1_skew I r2_skew ]
+ * Identity used:
+ * w k % (rx i + ry j) = w * (-ry i + rx j)
+ * 
+ * Motor constraint
+ * Cdot = w2 - w1
+ * J = [0 0 -1 0 0 1]
+ * K = invI1 + invI2
+ *
+ * @class b2RevoluteJoint
+ * @constructor
+ */
 var b2RevoluteJoint = function (def) {
 	// The constructor for b2Joint
 	// initialize instance variables for references
@@ -11373,7 +11610,10 @@ b2RevoluteJoint.tImpulse = new b2Vec2();
 
 
 
-
+/**
+ * @class b2RevoluteJointDef
+ * @constructor
+ */
 var b2RevoluteJointDef = function () {
 
 	// The constructor for b2JointDef

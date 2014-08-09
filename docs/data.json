@@ -715,7 +715,7 @@
             "extension_for": [],
             "file": "src\\fork\\box2d\\collision\\b2AABB.js",
             "line": 19,
-            "description": "A manifold for two touching convex shapes.",
+            "description": "An axis aligned bounding box.",
             "is_constructor": 1
         },
         "b2Bound": {
@@ -1410,6 +1410,14 @@
         }
     },
     "classitems": [
+        {
+            "file": "src\\fork\\box2d\\collision\\b2AABB.js",
+            "line": 33,
+            "description": "Verify that the bounds are sorted.",
+            "itemtype": "method",
+            "name": "IsValid",
+            "class": "b2AABB"
+        },
         {
             "file": "src\\fork\\box2d\\dynamics\\b2World.js",
             "line": 67,

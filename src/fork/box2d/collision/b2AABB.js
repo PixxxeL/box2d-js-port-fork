@@ -17,6 +17,8 @@
 */
 
 /**
+ * An axis aligned bounding box.
+ * 
  * @class b2AABB
  * @constructor
  */
@@ -28,6 +30,11 @@ var b2AABB = function () {
 };
 b2AABB.prototype = 
 {
+	/**
+	 * Verify that the bounds are sorted.
+	 *
+	 * @method IsValid
+	 */
 	IsValid: function(){
 		//var d = b2Math.SubtractVV(this.maxVertex, this.minVertex);
 		var dX = this.maxVertex.x;

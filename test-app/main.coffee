@@ -9,12 +9,57 @@ initBox2d = ->
 
 initDraw = ->
     canvas = document.getElementById 'canvas'
+    canvas.addEventListener 'mousedown', mouseDown
+    canvas.addEventListener 'mouseup', mouseUp
+    canvas.addEventListener 'mousemove', mouseMove
     ctx = canvas.getContext('2d')
     window.world.SetDebugDraw({
         ctx : ctx
         width : 640
         height : 480
     })
+
+mouseDown = (e) ->
+    mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
+    mouseY = (e.clientY - (@.offsetTop - @.scrollTop))
+    worldPoint = new b2Vec2(mouseX, mouseY)
+    world = window.world
+    joint = world.m_jointList
+    while joint = joint.m_next
+        if joint.m_userData is 'mouseJoint'
+            return
+    world.QueryPoint( (body) ->
+        jointDef = new b2MouseJointDef
+        jointDef.body1 = world.GetGroundBody()
+        jointDef.body2 = body
+        jointDef.target = worldPoint
+        jointDef.maxForce = 10000 * body.GetMass()
+        mouseJoint = world.CreateJoint(jointDef)
+        mouseJoint.m_userData = 'mouseJoint'
+    , worldPoint)
+
+mouseUp = (e) ->
+    mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
+    mouseY = (e.clientY - (@.offsetTop - @.scrollTop))
+    worldPoint = new b2Vec2(mouseX, mouseY)
+    world = window.world
+    joint = world.m_jointList
+    while joint = joint.m_next
+        if joint.m_userData is 'mouseJoint'
+            world.DestroyJoint joint
+            joint = null
+            return
+
+mouseMove = (e) ->
+    mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
+    mouseY = (e.clientY - (@.offsetTop - @.scrollTop))
+    worldPoint = new b2Vec2(mouseX, mouseY)
+    world = window.world
+    joint = world.m_jointList
+    while joint = joint.m_next
+        if joint.m_userData is 'mouseJoint'
+            joint.SetTarget worldPoint
+            return
 
 addBody = (params) ->
     params ||= {}
@@ -66,6 +111,16 @@ ground = ->
         friction : .1
         density : 0
     })
+    # ceiling
+    addBody({
+        name : 'ceiling'
+        x : 320
+        y : 5
+        width : 640
+        height : 10
+        friction : .1
+        density : 0
+    })
     # left wall
     addBody({
         name : 'left wall'
@@ -105,8 +160,8 @@ bodies = ->
         x : 370
         y : 100
         radius: 15
-        friction : 0.2
-        restitution : 0.2
+        friction : .2
+        restitution : .2
         density : 2
     })
     # static triangle
@@ -117,7 +172,7 @@ bodies = ->
         points: [[0, 0], [100, 100], [-100, 125]]
         friction : .1
         #restitution : ,
-        density : 1
+        density : .25
     })
     jointDef = new b2RevoluteJointDef
     jointDef.body1 = tri;
