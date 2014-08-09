@@ -20,35 +20,38 @@ initDraw = ->
     })
 
 mouseDown = (e) ->
+    world = window.world
+    joint = world.m_jointList
+    while joint
+        if joint.m_userData is 'mouseJoint'
+            return
+        joint = joint.m_next
     mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
     mouseY = (e.clientY - (@.offsetTop - @.scrollTop))
     worldPoint = new b2Vec2(mouseX, mouseY)
-    world = window.world
-    joint = world.m_jointList
-    while joint = joint.m_next
-        if joint.m_userData is 'mouseJoint'
-            return
     world.QueryPoint( (body) ->
+        mass = body.GetMass()
+        if not mass
+            return
         jointDef = new b2MouseJointDef
         jointDef.body1 = world.GetGroundBody()
         jointDef.body2 = body
         jointDef.target = worldPoint
-        jointDef.maxForce = 10000 * body.GetMass()
+        jointDef.maxForce = 10000 * mass
+        jointDef.collideConnected = true
         mouseJoint = world.CreateJoint(jointDef)
         mouseJoint.m_userData = 'mouseJoint'
     , worldPoint)
 
 mouseUp = (e) ->
-    mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
-    mouseY = (e.clientY - (@.offsetTop - @.scrollTop))
-    worldPoint = new b2Vec2(mouseX, mouseY)
     world = window.world
     joint = world.m_jointList
-    while joint = joint.m_next
+    while joint
         if joint.m_userData is 'mouseJoint'
             world.DestroyJoint joint
             joint = null
             return
+        joint = joint.m_next
 
 mouseMove = (e) ->
     mouseX = (e.clientX - (@.offsetLeft - @.scrollLeft))
@@ -56,10 +59,11 @@ mouseMove = (e) ->
     worldPoint = new b2Vec2(mouseX, mouseY)
     world = window.world
     joint = world.m_jointList
-    while joint = joint.m_next
+    while joint
         if joint.m_userData is 'mouseJoint'
             joint.SetTarget worldPoint
             return
+        joint = joint.m_next
 
 addBody = (params) ->
     params ||= {}

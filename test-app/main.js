@@ -27,41 +27,45 @@ initDraw = function() {
 
 mouseDown = function(e) {
   var joint, mouseX, mouseY, worldPoint;
-  mouseX = e.clientX - (this.offsetLeft - this.scrollLeft);
-  mouseY = e.clientY - (this.offsetTop - this.scrollTop);
-  worldPoint = new b2Vec2(mouseX, mouseY);
   world = window.world;
   joint = world.m_jointList;
-  while (joint = joint.m_next) {
+  while (joint) {
     if (joint.m_userData === 'mouseJoint') {
       return;
     }
+    joint = joint.m_next;
   }
+  mouseX = e.clientX - (this.offsetLeft - this.scrollLeft);
+  mouseY = e.clientY - (this.offsetTop - this.scrollTop);
+  worldPoint = new b2Vec2(mouseX, mouseY);
   return world.QueryPoint(function(body) {
-    var jointDef, mouseJoint;
+    var jointDef, mass, mouseJoint;
+    mass = body.GetMass();
+    if (!mass) {
+      return;
+    }
     jointDef = new b2MouseJointDef;
     jointDef.body1 = world.GetGroundBody();
     jointDef.body2 = body;
     jointDef.target = worldPoint;
-    jointDef.maxForce = 10000 * body.GetMass();
+    jointDef.maxForce = 10000 * mass;
+    jointDef.collideConnected = true;
     mouseJoint = world.CreateJoint(jointDef);
     return mouseJoint.m_userData = 'mouseJoint';
   }, worldPoint);
 };
 
 mouseUp = function(e) {
-  var joint, mouseX, mouseY, worldPoint;
-  mouseX = e.clientX - (this.offsetLeft - this.scrollLeft);
-  mouseY = e.clientY - (this.offsetTop - this.scrollTop);
-  worldPoint = new b2Vec2(mouseX, mouseY);
+  var joint;
   world = window.world;
   joint = world.m_jointList;
-  while (joint = joint.m_next) {
+  while (joint) {
     if (joint.m_userData === 'mouseJoint') {
       world.DestroyJoint(joint);
       joint = null;
       return;
     }
+    joint = joint.m_next;
   }
 };
 
@@ -72,11 +76,12 @@ mouseMove = function(e) {
   worldPoint = new b2Vec2(mouseX, mouseY);
   world = window.world;
   joint = world.m_jointList;
-  while (joint = joint.m_next) {
+  while (joint) {
     if (joint.m_userData === 'mouseJoint') {
       joint.SetTarget(worldPoint);
       return;
     }
+    joint = joint.m_next;
   }
 };
 
