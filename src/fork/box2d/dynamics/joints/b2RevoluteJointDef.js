@@ -53,5 +53,10 @@ Object.extend(b2RevoluteJointDef.prototype,
 	motorTorque: null,
 	motorSpeed: null,
 	enableLimit: null,
-	enableMotor: null
+	enableMotor: null,
+	Initialize : function (body1, body2, anchorPoint) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.anchorPoint = anchorPoint;
+	}
 });

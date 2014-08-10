@@ -8201,7 +8201,7 @@ b2World.prototype =
 	    }
 	    for (item = world.m_bodyList; item; item = item.m_next) {
 	        for (shape = item.GetShapeList(); shape != null; shape = shape.GetNext()) {
-	            this._drawShape(shape);
+	            this._drawShape(shape, item.GetMass(), item.IsSleeping());
 	        }
 	    }
 	},
@@ -8221,7 +8221,7 @@ b2World.prototype =
 	        x2 = b2.m_position,
 	        p1 = joint.GetAnchor1(),
 	        p2 = joint.GetAnchor2();
-	    this.ctx.strokeStyle = '#ffffff';
+	    this.ctx.strokeStyle = 'rgba(230,230,77,.75)';
 	    this.ctx.beginPath();
 	    switch (joint.m_type) {
 	        case b2Joint.e_distanceJoint:
@@ -8250,10 +8250,19 @@ b2World.prototype =
 	    }
 	    this.ctx.stroke();
 	},
-	_drawShape : function (shape) {
-	    var i, v, tV, pos, r, segments, theta, dtheta, d, ax;
-	    this.ctx.strokeStyle = 'rgba(255,255,255,.75)';
-	    this.ctx.fillStyle = 'rgba(255,255,255,.33)';
+	_drawShape : function (shape, mass, active) {
+	    var strokeColor = 'rgba(180,180,180,.75)',
+	    	fillColor = 'rgba(180,180,180,.33)',
+	    	i, v, tV, pos, r, segments, theta, dtheta, d, ax;
+	    if (!mass) {
+	    	strokeColor = 'rgba(128,230,128,.75)';
+	    	fillColor = 'rgba(128,230,128,.33)';
+	    } else if (active) {
+	    	strokeColor = 'rgba(230,180,180,.75)';
+	    	fillColor = 'rgba(230,180,180,.33)';
+	    }
+	    this.ctx.strokeStyle = strokeColor;
+	    this.ctx.fillStyle = fillColor;
 	    this.ctx.beginPath();
 	    switch (shape.m_type) {
 	        case b2Shape.e_circleShape:
@@ -11643,5 +11652,10 @@ Object.extend(b2RevoluteJointDef.prototype,
 	motorTorque: null,
 	motorSpeed: null,
 	enableLimit: null,
-	enableMotor: null
+	enableMotor: null,
+	Initialize : function (body1, body2, anchorPoint) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.anchorPoint = anchorPoint;
+	}
 });
