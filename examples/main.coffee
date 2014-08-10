@@ -1,5 +1,20 @@
 
 world = null
+fps = null
+
+class Fps
+    constructor: (@fpsEl) ->
+        @lastFps = +new Date
+        @frameTime = 0
+        @frame = 0
+    render: ->
+        now = +new Date
+        elapsed = now - @lastFps
+        @frameTime += (elapsed - @frameTime) / 20
+        if not (@frame % 60)
+            @fpsEl.innerHTML = (1000 / @frameTime) | 0
+        @lastFps = now
+        @frame++
 
 initBox2d = ->
     aabb = new b2AABB
@@ -18,6 +33,7 @@ initDraw = ->
         width : 640
         height : 480
     })
+    fps = new Fps document.getElementById 'fps-value'
 
 mouseDown = (e) ->
     world = window.world
@@ -185,6 +201,7 @@ bodies = ->
     window.world.CreateJoint(jointDef)
 
 animate = ->
+    fps.render()
     window.world.Step(1 / 60, 4)
     window.world.DebugDraw()
     requestAnimationFrame animate
