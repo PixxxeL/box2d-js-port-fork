@@ -8229,7 +8229,10 @@ b2World.prototype =
 	            this.ctx.lineTo(p2.x, p2.y);
 	            break;
 	        case b2Joint.e_pulleyJoint:
-	            // TODO
+	            this.ctx.moveTo(x1.x, x1.y);
+	            this.ctx.lineTo(p1.x, p1.y);
+	            this.ctx.lineTo(p2.x, p2.y);
+	            this.ctx.lineTo(x2.x, x2.y);
 	            break;
 	        default:
 	            if (b1 == world.m_groundBody) {
@@ -10415,7 +10418,13 @@ Object.extend(b2PrismaticJointDef.prototype,
 	motorForce: null,
 	motorSpeed: null,
 	enableLimit: null,
-	enableMotor: null
+	enableMotor: null,
+	Initialize : function (body1, body2, anchorPoint, axis) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.anchorPoint = anchorPoint;
+		this.axis = axis;
+	}
 });
 
 ﻿/*
@@ -11103,7 +11112,16 @@ Object.extend(b2PulleyJointDef.prototype,
 	anchorPoint2: new b2Vec2(),
 	maxLength1: null,
 	maxLength2: null,
-	ratio: null
+	ratio: null,
+	Initialize : function (body1, body2, groundPoint1, groundPoint2, anchorPoint1, anchorPoint2, ratio) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.groundPoint1 = groundPoint1;
+		this.groundPoint2 = groundPoint2;
+		this.anchorPoint1 = anchorPoint1;
+		this.anchorPoint2 = anchorPoint2;
+		this.ratio = ratio;
+	}
 });
 
 ﻿/*

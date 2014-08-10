@@ -64,6 +64,15 @@ Object.extend(b2PulleyJointDef.prototype,
 	anchorPoint2: new b2Vec2(),
 	maxLength1: null,
 	maxLength2: null,
-	ratio: null
+	ratio: null,
+	Initialize : function (body1, body2, groundPoint1, groundPoint2, anchorPoint1, anchorPoint2, ratio) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.groundPoint1 = groundPoint1;
+		this.groundPoint2 = groundPoint2;
+		this.anchorPoint1 = anchorPoint1;
+		this.anchorPoint2 = anchorPoint2;
+		this.ratio = ratio;
+	}
 });
 

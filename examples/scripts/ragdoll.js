@@ -18,6 +18,7 @@ ragdoll = function() {
       restitution: .3,
       density: 1
     });
+    head.ApplyImpulse(new b2Vec2(Math.random() * 5000000 - 2500000, Math.random() * 5000000 - 2500000), head.m_position);
     torsos = [];
     params = {
       x: startX,

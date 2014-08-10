@@ -589,7 +589,10 @@ b2World.prototype =
 	            this.ctx.lineTo(p2.x, p2.y);
 	            break;
 	        case b2Joint.e_pulleyJoint:
-	            // TODO
+	            this.ctx.moveTo(x1.x, x1.y);
+	            this.ctx.lineTo(p1.x, p1.y);
+	            this.ctx.lineTo(p2.x, p2.y);
+	            this.ctx.lineTo(x2.x, x2.y);
 	            break;
 	        default:
 	            if (b1 == world.m_groundBody) {

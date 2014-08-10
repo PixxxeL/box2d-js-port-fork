@@ -16,10 +16,14 @@ ragdoll = ->
             restitution : .3
             density : 1
         })
-        #head.ApplyImpulse(
-        #    new b2Vec2(Math.random() * 100000 - 50000, Math.random() * 100000 - 50000), 
-        #    head.m_position
-        #)
+        # dont work
+        head.ApplyImpulse(
+            new b2Vec2(
+                Math.random() * 5000000 - 2500000,
+                Math.random() * 5000000 - 2500000
+            ), 
+            head.m_position
+        )
         # torsos
         torsos = []
         params = {

@@ -89,7 +89,7 @@ mouseMove = function(e) {
 };
 
 bodies = function() {
-  return ragdoll();
+  return crankGearsPulley();
 };
 
 animate = function() {

@@ -21,3 +21,5 @@ List of changes:
     set `SetDebugDraw` where pass 2d-context, width and height of canvas-2d.
   * Add `QueryPoint` method of b2World class for hit test point over shape.
     There is no in original port.
+  * Add documentation.
+  * Add examples from flash port.

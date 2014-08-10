@@ -52,6 +52,12 @@ Object.extend(b2PrismaticJointDef.prototype,
 	motorForce: null,
 	motorSpeed: null,
 	enableLimit: null,
-	enableMotor: null
+	enableMotor: null,
+	Initialize : function (body1, body2, anchorPoint, axis) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.anchorPoint = anchorPoint;
+		this.axis = axis;
+	}
 });
 
