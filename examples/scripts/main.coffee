@@ -71,7 +71,8 @@ bodies = ->
     #simple()
     #ragdoll()
     #crankGearsPulley()
-    bridge()
+    #bridge()
+    stack()
 
 animate = ->
     fps.render()
