@@ -70,7 +70,8 @@ mouseMove = (e) ->
 bodies = ->
     #simple()
     #ragdoll()
-    crankGearsPulley()
+    #crankGearsPulley()
+    bridge()
 
 animate = ->
     fps.render()
