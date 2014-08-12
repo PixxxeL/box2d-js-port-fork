@@ -45,5 +45,11 @@ Object.extend(b2DistanceJointDef.prototype, b2JointDef.prototype);
 Object.extend(b2DistanceJointDef.prototype, 
 {
 	anchorPoint1: new b2Vec2(),
-	anchorPoint2: new b2Vec2()
+	anchorPoint2: new b2Vec2(),
+	Initialize : function (body1, body2, anchorPoint1, anchorPoint2) {
+		this.body1 = body1;
+		this.body2 = body2;
+		this.anchorPoint1 = anchorPoint1;
+		this.anchorPoint2 = anchorPoint2;
+	}
 });

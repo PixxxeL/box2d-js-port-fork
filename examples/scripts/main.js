@@ -89,7 +89,7 @@ mouseMove = function(e) {
 };
 
 bodies = function() {
-  return stack();
+  return walker();
 };
 
 animate = function() {
