@@ -73,7 +73,7 @@ _params = function() {
 };
 
 _create_leg = function(dir, anchor, ch, wh) {
-  var djd, leg1, leg2, m_offset, p1, p2, p3, p4, p5, p6, params, points1, points2, pos, rjd, scale, world;
+  var leg1, leg2, m_offset, p1, p2, p3, p4, p5, p6, params, points1, points2, pos, scale, world;
   world = window.world;
   params = _params();
   scale = params['scale'];
@@ -97,7 +97,6 @@ _create_leg = function(dir, anchor, ch, wh) {
     points: points1,
     density: 1
   });
-  leg1.m_angularDamping = 10;
   leg1.m_shapeList.m_groupIndex = -1;
   pos = b2Math.AddVV(p4, m_offset);
   leg2 = addBody({
@@ -106,20 +105,29 @@ _create_leg = function(dir, anchor, ch, wh) {
     points: points2,
     density: 1
   });
-  leg2.m_angularDamping = 10;
-  leg2.m_shapeList.m_groupIndex = -1;
-  djd = new b2DistanceJointDef;
-  djd.dampingRatio = .5;
-  djd.frequencyHz = 10;
-  djd.Initialize(leg1, leg2, b2Math.AddVV(p2, m_offset), b2Math.AddVV(p5, m_offset));
-  world.CreateJoint(djd);
-  djd.Initialize(leg1, leg2, b2Math.AddVV(p3, m_offset), b2Math.AddVV(p4, m_offset));
-  world.CreateJoint(djd);
-  djd.Initialize(leg1, wh, b2Math.AddVV(p3, m_offset), b2Math.AddVV(anchor, m_offset));
-  world.CreateJoint(djd);
-  djd.Initialize(leg2, wh, b2Math.AddVV(p6, m_offset), b2Math.AddVV(anchor, m_offset));
-  world.CreateJoint(djd);
-  rjd = new b2RevoluteJointDef;
-  rjd.Initialize(leg2, ch, b2Math.AddVV(p4, m_offset));
-  return world.CreateJoint(rjd);
+  return leg2.m_shapeList.m_groupIndex = -1;
+
+  /*djd = new b2DistanceJointDef
+   * Using a soft distance constraint can reduce some jitter.
+   * It also makes the structure seem a bit more fluid by
+   * acting like a suspension system.
+  djd.dampingRatio = .5
+  djd.frequencyHz = 10
+  
+  djd.Initialize(leg1, leg2, b2Math.AddVV(p2, m_offset), b2Math.AddVV(p5, m_offset))
+  world.CreateJoint(djd)
+  
+  djd.Initialize(leg1, leg2, b2Math.AddVV(p3, m_offset), b2Math.AddVV(p4, m_offset))
+  world.CreateJoint(djd)
+  
+  djd.Initialize(leg1, wh, b2Math.AddVV(p3, m_offset), b2Math.AddVV(anchor, m_offset))
+  world.CreateJoint(djd)
+  
+  djd.Initialize(leg2, wh, b2Math.AddVV(p6, m_offset), b2Math.AddVV(anchor, m_offset))
+  world.CreateJoint(djd)
+  
+  rjd = new b2RevoluteJointDef
+  rjd.Initialize(leg2, ch, b2Math.AddVV(p4, m_offset))
+  world.CreateJoint(rjd)
+   */
 };

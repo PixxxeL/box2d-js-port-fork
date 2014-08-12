@@ -111,7 +111,7 @@ _create_leg = (dir, anchor, ch, wh) ->
         points : points1
         density : 1
     })
-    leg1.m_angularDamping = 10
+    #leg1.m_angularDamping = 10
     leg1.m_shapeList.m_groupIndex = -1
     pos = b2Math.AddVV(p4, m_offset)
     leg2 = addBody({
@@ -120,17 +120,16 @@ _create_leg = (dir, anchor, ch, wh) ->
         points : points2
         density : 1
     })
-    leg2.m_angularDamping = 10
+    #leg2.m_angularDamping = 10
     leg2.m_shapeList.m_groupIndex = -1
 
-    djd = new b2DistanceJointDef
+    ###djd = new b2DistanceJointDef
     # Using a soft distance constraint can reduce some jitter.
     # It also makes the structure seem a bit more fluid by
     # acting like a suspension system.
     djd.dampingRatio = .5
     djd.frequencyHz = 10
 
-    
     djd.Initialize(leg1, leg2, b2Math.AddVV(p2, m_offset), b2Math.AddVV(p5, m_offset))
     world.CreateJoint(djd)
     
@@ -145,4 +144,4 @@ _create_leg = (dir, anchor, ch, wh) ->
     
     rjd = new b2RevoluteJointDef
     rjd.Initialize(leg2, ch, b2Math.AddVV(p4, m_offset))
-    world.CreateJoint(rjd)######
+    world.CreateJoint(rjd)###
