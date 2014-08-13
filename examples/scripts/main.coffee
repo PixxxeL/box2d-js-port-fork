@@ -1,6 +1,7 @@
 
 world = null
 fps = null
+current = 0
 
 initBox2d = ->
     aabb = new b2AABB
@@ -13,6 +14,7 @@ initDraw = ->
     canvas.addEventListener 'mousedown', mouseDown
     canvas.addEventListener 'mouseup', mouseUp
     canvas.addEventListener 'mousemove', mouseMove
+    window.addEventListener 'keydown', keyDown
     ctx = canvas.getContext('2d')
     window.world.SetDebugDraw({
         ctx : ctx
@@ -20,6 +22,18 @@ initDraw = ->
         height : 480
     })
     fps = new Fps document.getElementById 'fps-value'
+
+initWorld = ->
+    initBox2d()
+    initDraw()
+    ground()
+    getExamples()[current]()
+
+cleanup = ->
+    canvas.removeEventListener 'mousedown', mouseDown
+    canvas.removeEventListener 'mouseup', mouseUp
+    canvas.removeEventListener 'mousemove', mouseMove
+    window.removeEventListener 'keydown', keyDown
 
 mouseDown = (e) ->
     world = window.world
@@ -67,23 +81,42 @@ mouseMove = (e) ->
             return
         joint = joint.m_next
 
-bodies = ->
-    #simple()
-    #ragdoll()
-    #crankGearsPulley()
-    #bridge()
-    #stack()
-    walker()
+keyDown = (e) ->
+    if e.keyCode is 37 # ←
+        setCurrentExampleIndex(-1)
+        initWorld()
+    else if e.keyCode is 39 # →
+        setCurrentExampleIndex(1)
+        initWorld()
+    else if e.keyCode is 82 # R
+        initWorld()
+
+getExamples = ->
+    return [
+        ragdoll
+        crankGearsPulley
+        bridge
+        stack
+        pendulum
+    ]
+
+setCurrentExampleIndex = (step) ->
+    len = getExamples().length - 1
+    if step
+        current += step
+    if current > len
+        current = 0
+    else if current < 0
+        current = len
 
 animate = ->
+    if not fps or not world
+        return
     fps.render()
-    window.world.Step(1 / 60, 4)
-    window.world.DebugDraw()
+    world.Step(1 / 60, 4)
+    world.DebugDraw()
     requestAnimationFrame animate
 
 window.onload = ->
-    initBox2d()
-    initDraw()
-    ground()
-    bodies()
+    initWorld()
     animate()
