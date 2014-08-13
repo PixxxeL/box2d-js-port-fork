@@ -138,7 +138,7 @@ keyDown = function(e) {
 };
 
 getExamples = function() {
-  return [ragdoll, crankGearsPulley, bridge, stack, pendulum, simple];
+  return [compound, ragdoll, crankGearsPulley, bridge, stack, pendulum, simple];
 };
 
 setCurrentExampleIndex = function(step) {

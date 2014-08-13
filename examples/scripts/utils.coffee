@@ -42,7 +42,7 @@ addBody = (params) ->
         shapeDef.extents.Set(
             (toInt(width) || 30) * .5,
             (toInt(height) || 30) * .5
-        );
+        )
         bodyDef.AddShape(shapeDef)
     if rotation
         shapeDef.localRotation = rotation

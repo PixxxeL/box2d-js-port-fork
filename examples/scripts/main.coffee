@@ -113,6 +113,7 @@ keyDown = (e) ->
 
 getExamples = ->
     return [
+        compound
         ragdoll
         crankGearsPulley
         bridge
