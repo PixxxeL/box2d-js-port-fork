@@ -79,3 +79,4 @@ bridge = ->
             restitution : .1
             rotation : Math.random() * Math.PI
         })
+    return 'Bridge'

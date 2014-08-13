@@ -33,3 +33,4 @@ stack = ->
         restitution : .2
         density : 3
     })
+    return 'Stacked Boxes'

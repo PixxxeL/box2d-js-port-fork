@@ -176,3 +176,4 @@ crankGearsPulley = ->
     wjd.Initialize(circleBody, body, circleBody.GetPosition());
     m_world.CreateJoint(wjd);
     ###
+    return 'Crank, Gears, Pulley'

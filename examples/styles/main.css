@@ -17,10 +17,23 @@ html, body {
 .fps-container {
     position: absolute;
     top: 5px;
-    left: 2px;
+    left: 5px;
     padding: 2px 5px;
     border: solid 1px #000;
     background: #333;
+    background: rgba(50,50,50,.8);
     color: #ccc;
     text-align: center;
+}
+#title-container {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    border: solid 1px #000;
+    background: #333;
+    background: rgba(50,50,50,.8);
+    color: #ccc;
+    text-align: center;
+    font-weight: bold;
 }

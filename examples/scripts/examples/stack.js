@@ -25,7 +25,7 @@ stack = function() {
     friction: .5,
     restitution: .1
   });
-  return addBody({
+  addBody({
     name: 'ball',
     x: 60,
     y: 100,
@@ -34,4 +34,5 @@ stack = function() {
     restitution: .2,
     density: 3
   });
+  return 'Stacked Boxes';
 };

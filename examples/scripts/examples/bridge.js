@@ -2,7 +2,7 @@
 var bridge;
 
 bridge = function() {
-  var body, ground, i, p0, p1, p2, p3, p4, pm, points, prevBody, rjd, world, _i, _j, _k, _l, _results;
+  var body, ground, i, p0, p1, p2, p3, p4, pm, points, prevBody, rjd, world, _i, _j, _k, _l;
   world = window.world;
   ground = world.GetGroundBody();
   rjd = new b2RevoluteJointDef;
@@ -49,7 +49,6 @@ bridge = function() {
       restitution: .1
     });
   }
-  _results = [];
   for (i = _l = 0; _l <= 14; i = ++_l) {
     if (Math.random() > .66) {
       points = [[-10 - Math.random() * 10, 10 + Math.random() * 10], [-5 - Math.random() * 10, -10 - Math.random() * 10], [5 + Math.random() * 10, -10 - Math.random() * 10], [10 + Math.random() * 10, 10 + Math.random() * 10]];
@@ -64,7 +63,7 @@ bridge = function() {
     } else {
       points = [[0, 10 + Math.random() * 10], [-5 - Math.random() * 10, -10 - Math.random() * 10], [5 + Math.random() * 10, -10 - Math.random() * 10]];
     }
-    _results.push(addBody({
+    addBody({
       name: "polygon " + (i + 1),
       x: Math.random() * 400 + 120,
       y: Math.random() * 150 + 50,
@@ -73,7 +72,7 @@ bridge = function() {
       friction: .3,
       restitution: .1,
       rotation: Math.random() * Math.PI
-    }));
+    });
   }
-  return _results;
+  return 'Bridge';
 };

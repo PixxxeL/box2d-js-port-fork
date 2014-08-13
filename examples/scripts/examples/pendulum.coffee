@@ -29,3 +29,4 @@ pendulum = ->
         density : 1
     })
     world.CreateJoint(rjd)
+    return 'Pendulum'

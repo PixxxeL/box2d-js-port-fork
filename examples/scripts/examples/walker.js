@@ -59,7 +59,8 @@ walker = function() {
   m_wheel.m_position = m_wheel.m_position;
   m_wheel.m_rotation = -120 * TO_RAD;
   _create_leg(-1, wheelAnchor, m_chassis, m_wheel);
-  return _create_leg(1, wheelAnchor, m_chassis, m_wheel);
+  _create_leg(1, wheelAnchor, m_chassis, m_wheel);
+  return 'Theo Jansen Walker';
 };
 
 _params = function() {

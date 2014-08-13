@@ -156,7 +156,7 @@ ragdoll = function() {
     params['width'] = 20 * i;
     addBody(params);
   }
-  return addBody({
+  addBody({
     x: 320,
     y: 420,
     width: 50,
@@ -164,4 +164,5 @@ ragdoll = function() {
     friction: .4,
     restitution: .3
   });
+  return 'Ragdolls';
 };

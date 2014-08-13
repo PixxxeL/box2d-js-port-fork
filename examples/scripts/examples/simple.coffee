@@ -78,4 +78,4 @@ simple = ->
     rjd.body1 = circle
     rjd.anchorPoint = circle.GetCenterPosition()
     world.CreateJoint(rjd)
-    return
+    return 'Simple'

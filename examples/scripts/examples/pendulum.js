@@ -32,5 +32,6 @@ pendulum = function() {
     restitution: 1,
     density: 1
   });
-  return world.CreateJoint(rjd);
+  world.CreateJoint(rjd);
+  return 'Pendulum';
 };

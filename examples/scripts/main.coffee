@@ -1,6 +1,7 @@
 
 world = null
 fps = null
+title = null
 current = 0
 
 initBox2d = ->
@@ -24,10 +25,12 @@ initDraw = ->
     fps = new Fps document.getElementById 'fps-value'
 
 initWorld = ->
+    cleanup()
     initBox2d()
     initDraw()
     ground()
-    getExamples()[current]()
+    scene = getExamples()[current]
+    document.getElementById('title-container').innerHTML = scene()
 
 cleanup = ->
     canvas.removeEventListener 'mousedown', mouseDown
@@ -113,8 +116,8 @@ keyDown = (e) ->
 
 getExamples = ->
     return [
-        compound
         ragdoll
+        compound
         crankGearsPulley
         bridge
         stack

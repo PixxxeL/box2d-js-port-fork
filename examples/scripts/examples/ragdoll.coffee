@@ -182,3 +182,4 @@ ragdoll = ->
         friction : .4
         restitution : .3
     }
+    return 'Ragdolls'

@@ -114,7 +114,7 @@ crankGearsPulley = function() {
   pjd6.maxLength1 = 200;
   pjd6.maxLength2 = 150;
   world.CreateJoint(pjd6);
-  return circle = addBody({
+  circle = addBody({
     name: 'circle',
     x: 485,
     y: 100,
@@ -163,4 +163,5 @@ crankGearsPulley = function() {
   wjd.Initialize(circleBody, body, circleBody.GetPosition());
   m_world.CreateJoint(wjd);
    */
+  return 'Crank, Gears, Pulley';
 };

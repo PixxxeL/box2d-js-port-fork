@@ -62,7 +62,7 @@ _compoundPoly = (i) ->
     bodyDef.position.Set(320, 360 - 40 * i)
     return bodyDef
 
-compoundBasket = ->
+_compoundBasket = ->
     bodyDef = new b2BodyDef
     shapeDef = new b2BoxDef
     shapeDef.density = 4
@@ -86,8 +86,9 @@ compoundBasket = ->
 compound = ->
     for i in [0..4]
         world.CreateBody(_compoundRect(i))
-    world.CreateBody(compoundBasket())
+    world.CreateBody(_compoundBasket())
     for i in [0..4]
         world.CreateBody(_compoundPoly(i))
     for i in [0..4]
         world.CreateBody(_compoundCircle(i))
+    return 'Compound Shapes'
