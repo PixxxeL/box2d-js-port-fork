@@ -8,7 +8,7 @@ TO_RAD = 180 / Math.PI;
 Fps = (function() {
   function Fps(fpsEl) {
     this.fpsEl = fpsEl;
-    this.lastFps = +(new Date);
+    this.lastTime = +(new Date);
     this.frameTime = 0;
     this.frame = 0;
   }
@@ -16,12 +16,12 @@ Fps = (function() {
   Fps.prototype.render = function() {
     var elapsed, now;
     now = +(new Date);
-    elapsed = now - this.lastFps;
+    elapsed = now - this.lastTime;
     this.frameTime += (elapsed - this.frameTime) / 20;
-    if (!(this.frame % 60)) {
+    if (!(this.frame % 60) && this.frameTime > 5) {
       this.fpsEl.innerHTML = (1000 / this.frameTime) | 0;
     }
-    this.lastFps = now;
+    this.lastTime = now;
     return this.frame++;
   };
 

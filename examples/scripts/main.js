@@ -114,11 +114,31 @@ keyDown = function(e) {
     return initWorld();
   } else if (e.keyCode === 82) {
     return initWorld();
+  } else if (e.keyCode === 83) {
+    return addBody({
+      name: "square " + (Math.random() * 100000 | 0),
+      x: Math.random() * 580 + 30,
+      y: Math.random() * 70 + 30,
+      width: 30,
+      height: 30,
+      friction: .2,
+      density: 1
+    });
+  } else if (e.keyCode === 67) {
+    return addBody({
+      name: "circle " + (Math.random() * 100000 | 0),
+      x: Math.random() * 580 + 30,
+      y: Math.random() * 70 + 30,
+      radius: 15,
+      friction: .2,
+      restitution: .2,
+      density: 2
+    });
   }
 };
 
 getExamples = function() {
-  return [ragdoll, crankGearsPulley, bridge, stack, pendulum];
+  return [ragdoll, crankGearsPulley, bridge, stack, pendulum, simple];
 };
 
 setCurrentExampleIndex = function(step) {

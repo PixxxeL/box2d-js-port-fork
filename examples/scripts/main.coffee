@@ -90,6 +90,26 @@ keyDown = (e) ->
         initWorld()
     else if e.keyCode is 82 # R
         initWorld()
+    else if e.keyCode is 83 # S
+        addBody({
+            name : "square #{Math.random() * 100000 | 0}"
+            x : Math.random() * 580 + 30
+            y : Math.random() * 70 + 30,
+            width : 30
+            height : 30
+            friction : .2
+            density : 1
+        })
+    else if e.keyCode is 67 # C
+        addBody({
+            name : "circle #{Math.random() * 100000 | 0}"
+            x : Math.random() * 580 + 30
+            y : Math.random() * 70 + 30
+            radius: 15
+            friction : .2
+            restitution : .2
+            density : 2
+        })
 
 getExamples = ->
     return [
@@ -98,6 +118,7 @@ getExamples = ->
         bridge
         stack
         pendulum
+        simple
     ]
 
 setCurrentExampleIndex = (step) ->

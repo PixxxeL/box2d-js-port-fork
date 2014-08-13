@@ -5,16 +5,16 @@ TO_RAD = 180 / Math.PI
 
 class Fps
     constructor: (@fpsEl) ->
-        @lastFps = +new Date
+        @lastTime = +new Date
         @frameTime = 0
         @frame = 0
     render: ->
         now = +new Date
-        elapsed = now - @lastFps
+        elapsed = now - @lastTime
         @frameTime += (elapsed - @frameTime) / 20
-        if not (@frame % 60)
+        if not (@frame % 60) and @frameTime > 5
             @fpsEl.innerHTML = (1000 / @frameTime) | 0
-        @lastFps = now
+        @lastTime = now
         @frame++
 
 addBody = (params) ->
