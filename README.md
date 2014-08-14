@@ -5,7 +5,7 @@ Fork of [port](http://box2d-js.sourceforge.net/index.html) (from Flash to js)
 of [Box2D Physics Engine](http://box2d.org/) for Javascript.
 Port was created by Ando Yasushi (sorry if i'm wrong)
 and located at http://box2d-js.sourceforge.net/index.html
-where was some more information.
+where was some more information. Original lib written by Erin Catto and others.
 
 I found some features of this port is inconvenient and try to correct it.
 
@@ -22,7 +22,19 @@ List of changes:
   * Add `QueryPoint` method of b2World class for hit test point over shape.
     There is no in original port.
   * Fix debug draw pulley joint.
-  * Add Initialize meth in `b2RevoluteJointDef`, `b2PrismaticJointDef`, 
-    `b2PulleyJointDef`.
+  * Add `Initialize` meth in `b2RevoluteJointDef`, `b2PrismaticJointDef`, 
+    `b2PulleyJointDef`, `b2DistanceJointDef`.
   * Add documentation.
   * Add examples from flash port.
+
+More about fork
+---------------
+On Russian: http://pixxxxxel.blogspot.ru/2014/08/box2djs.html
+
+Documentation
+-------------
+http://pixel-tyumen.ru/box2d/docs/
+
+Examples
+--------
+http://pixel-tyumen.ru/box2d/
